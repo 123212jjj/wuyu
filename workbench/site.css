@@ -89,35 +89,3 @@ nav .skill-download:hover {
   max-width: 1200px;
   margin: 6px auto 0;
 }
-
-.judou-back {
-  position: fixed;
-  left: 18px;
-  bottom: 18px;
-  z-index: 50;
-  display: inline-flex;
-  align-items: center;
-  min-height: 36px;
-  padding: 0 12px;
-  color: #f6f1e7;
-  font-size: 12px;
-  text-decoration: none;
-  background: #151518;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 3px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
-}
-
-.judou-back:hover {
-  color: #d7e6b4;
-  border-color: rgba(215, 230, 180, 0.5);
-}
-
-@media (max-width: 650px) {
-  .judou-back {
-    left: 12px;
-    bottom: 12px;
-    min-height: 34px;
-    font-size: 11px;
-  }
-}
