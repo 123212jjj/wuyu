@@ -2,7 +2,7 @@
 
 本地工作台集合：把三个可运行的小站收进同一个仓库，**文件全部落地为本地可编辑内容**（不是只读外链或 iframe），根目录 `index.html` 是导航门户。
 
-> 当前选择：先只提交源码到 `main`，**暂不开启 GitHub Pages**；在本地修改、预览、继续提交即可。
+> 线上版：已用 GitHub Pages 发布 `main` 分支根目录，点开即可用（公开可见）；本地仍可双击 bat 修改、预览后再提交。
 
 ## 目录结构
 
@@ -31,6 +31,19 @@
     ├── downloads/             # PPT 样例与实验记录
     └── deliver-workbench/     # Skill 文档（SKILL.md / INSTALL.md / references）
 ```
+
+## 在线访问（GitHub Pages）
+
+已发布到 GitHub Pages（公开可见，点开即用）：
+
+| 页面 | 地址 |
+|---|---|
+| 总门户 | https://123212jjj.github.io/wuyu/ |
+| 提示词助手 | https://123212jjj.github.io/wuyu/prompt/ |
+| 句读工作台 | https://123212jjj.github.io/wuyu/judou/ |
+| 成品工作台 | https://123212jjj.github.io/wuyu/workbench/ |
+
+> 每次向 `main` 推送后，GitHub 会自动重新构建并更新线上版，通常几十秒到一两分钟生效；页面资源均为相对路径，在线 `/wuyu/` 子路径与本地子目录结构一致。
 
 ## 怎么在自己电脑上打开使用
 
@@ -106,7 +119,7 @@
 
 - **提示词助手的 Office/PDF 附件解析**：`document-parser.mjs` 在浏览器直开模式下依赖打包环境（fflate、fast-xml-parser、xlsx、pdfjs 等）；纯文本类 `.txt/.md/.csv` 可直接读取，Word/Excel/PPT/PDF 解析需要按上游方式接入依赖后才完整可用，不影响"输入需求 → 整理提示词草稿 → 复制/下载"主流程。
 - **句读没有前端源码工程**：本仓库落地的是可运行静态成品；复杂功能改造需另找源码重建。
-- 未配置 GitHub Pages Actions，线上暂不发布；如之后需要线上访问，再单独开启 Pages 并把根目录作为发布目录。
+- 已通过 GitHub Pages 以 `main` 分支根目录发布纯静态站点；仓库根目录的 `.nojekyll` 关闭 Jekyll 处理，保证 `.md`、`.pptx` 等原始文件原样可访问，而不被忽略或转换。
 
 ## 来源与归属
 
