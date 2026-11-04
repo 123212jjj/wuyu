@@ -20,7 +20,7 @@
 │   ├── speech.mjs             # 浏览器语音输入
 │   ├── document-parser.mjs   # Office/PDF 解析参考源码（高级，见下方限制）
 │   └── favicon.svg
-├── judou/                     # 拾句 SHIJU 主站 · 多平台文案工作台（Vite 构建的静态成品，六个独立页面）
+├── judou/                     # 拾句 SHIJU 主站 · 多平台文案工作台（Vite 构建的静态成品，四个独立页面）
 │   ├── index.html             # 入口：标题、描述、资源引用
 │   ├── assets/                # 打包后的 js/css + 配图 *.jpg
 │   ├── fonts/                 # 网页字体
@@ -87,7 +87,8 @@
 
 ### 2. `judou/` 拾句 —— 每个功能都是一个独立页面
 
-- **不再有弹窗**：图片工坊 `#studio`、封面模板 `#templates`、品牌声音 `#brand`、版本历史 `#history`、分享协作 `#share`、使用说明 `#help`、发布中心 `#publish`。每个地址都能直接打开、刷新、收藏或分享，浏览器前进后退可用，`Esc` 或「返回创作台」回到创作台。
+- **不再有弹窗**：图片工坊 `#studio`、版本历史 `#history`、分享协作 `#share`、使用说明 `#help`、发布中心 `#publish`。每个地址都能直接打开、刷新、收藏或分享，浏览器前进后退可用，`Esc` 或「返回创作台」回到创作台。
+- 左侧边栏在创作台与所有页面常驻，可直接在这些页面之间切换。
 - **容易改**：`judou/index.html` 里的网页标题 `title`、描述 `meta description`；`judou/assets/` 下的配图（`citrus-table.jpg`、`green-orchard.jpg`、`plum-fruit.jpg`、`plum-soda.jpg`、`slow-morning.jpg`、`summer-drink.jpg`）**同名替换**即可保持引用不变。
 - **不建议手改**：`judou/assets/index-*.js`、`index-*.css` 是 Vite 构建压缩后的打包产物，变量被压缩、内容挤在单行里。要改界面文案或交互，需改前端源码（Vite + React，`base: './'` 以适配子目录）后重新 `vite build`，再把 `dist/` 里的 `index.html`、`assets/`、`fonts/` 覆盖到本目录。
 - `judou/assets/CREDITS.md` 保留了配图素材来源说明。
@@ -127,7 +128,7 @@
 
 - 提示词助手 Prompt Workbench：派生自公开仓库 `lamongl/-`，原始许可证为 MIT（上游根目录 `LICENSE`），本目录保留其可运行源码用于本地学习与二次修改。
 - 拾句 SHIJU 主站：前端最早来自公开仓库 `caojingxuan14/caojingxuan14.github.io`（上游提交 `8e75176`），现已升级为「拾句 SHIJU」新版，并由 Vite + React 源码构建后落入 `judou/`；配图素材来源见 `judou/assets/CREDITS.md`。
-  - 本轮改动：将原先以弹窗打开的六个面板（图片工坊、封面模板、品牌声音、版本历史、分享协作、使用说明）全部改为独立页面，每个页面有自己的地址，可刷新、可收藏、可分享。
+  - 本轮改动：将原先以弹窗打开的面板改为独立页面（图片工坊、版本历史、分享协作、使用说明），并移除「封面模板」「品牌声音」两个页面；侧边栏在所有页面常驻；每个页面有自己的地址，可刷新、可收藏、可分享。
   - 构建产物为 `dist/index.html`、`dist/assets/`、`dist/fonts/`；`judou/` 与该构建一一对应（另保留 `.nojekyll`）。
 - 成品工作台 `workbench/`：同属该公开仓库最新版自带子站，37 个文件整体落入 `workbench/`（展示页、截图、PPT 样例与 Skill 文档）；除「返回句读」链接指向 `../judou/` 外，其余原样保留，外链未改动。
 - 仅做了目录归并、相对路径适配和本地可编辑化整理，未改动各应用的核心行为。
