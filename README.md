@@ -92,5 +92,7 @@
 ## 来源与归属
 
 - 提示词助手 Prompt Workbench：派生自公开仓库 `lamongl/-`，原始许可证为 MIT（上游根目录 `LICENSE`），本目录保留其可运行源码用于本地学习与二次修改。
-- 句读 JUDOU：派生自公开仓库 `caojingxuan14/caojingxuan14.github.io` 的静态发布文件，素材来源见 `judou/assets/CREDITS.md`。
+- 句读 JUDOU：来自公开仓库 `caojingxuan14/caojingxuan14.github.io`（导入时上游提交 `9731e14`，共 15 个文件已 1:1 落入 `judou/`，无遗漏）；素材来源见 `judou/assets/CREDITS.md`。
+  - 保持原样未改的 12 个文件：6 张配图、3 个字体、懒加载分片 `index-BeoRn2gJ.js`、`CREDITS.md`、`.nojekyll`。
+  - 仅为子目录可运行而改写路径的 3 个文件：`judou/index.html`、`judou/assets/index-CfY9XuKg.js`（图片路径）、`judou/assets/index-LppVb9Hi.css`（字体路径）；未改动界面功能与文案逻辑。
 - 仅做了目录归并、相对路径适配和本地可编辑化整理，未改动两个应用的核心行为。
