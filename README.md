@@ -8,6 +8,8 @@
 
 ```
 .
+├── 启动门户.bat / 启动-提示词助手.bat / 启动-句读工作台.bat  # 双击即用的本地启动入口
+├── serve.ps1                  # 零依赖本地静态服务器（启动器本体，Windows 自带 PowerShell 运行）
 ├── index.html                 # 根导航门户（两张卡片进入两个小站）
 ├── prompt/                    # 提示词助手 Prompt Workbench（明文源码，最好改）
 │   ├── index.html             # 页面结构与可见文案
@@ -25,15 +27,29 @@
     └── .nojekyll
 ```
 
-## 怎么本地打开预览
+## 怎么在自己电脑上打开使用
 
-子站使用浏览器 ES Module，直接 `file://` 双击打开可能被浏览器安全策略拦截脚本，**用本地静态服务器最稳**，任选一种：
+子站用了浏览器模块（ES Module），直接双击 HTML 文件会被浏览器安全策略拦截脚本，所以**用仓库自带的启动器起一个本地小服务**即可，不需要安装 Node 或 Python。
 
-- Node（任选其一）：在本仓库根目录执行 `npx serve .` 或 `npx http-server -p 8080`
-- VS Code：安装 **Live Server** 插件，右键 `index.html` → Open with Live Server
-- 若电脑装有 Python：`python -m http.server 8080`
+### 最快：双击启动（Windows）
+在仓库根目录双击对应文件，会自动弹出服务窗口并用默认浏览器打开：
 
-然后浏览器访问 `http://localhost:8080/`，从门户进入两个小站。
+| 想打开 | 双击哪个文件 |
+|---|---|
+| 两个应用的总门户（再点卡片进入） | `启动门户.bat` |
+| 只打开「提示词助手」 | `启动-提示词助手.bat` |
+| 只打开「句读工作台」 | `启动-句读工作台.bat` |
+
+- 启动后浏览器地址类似 `http://127.0.0.1:8099/`；若 8099 被占用会自动换端口，以黑色窗口里打印的地址为准。
+- 用完直接**关闭那个黑色窗口**，服务即停止，不会常驻后台。
+- 启动器本体是 `serve.ps1`（Windows 自带 PowerShell 运行的零依赖静态服务器），三个 `.bat` 只是它的快捷入口。
+
+### 备选方式（电脑已装相应工具时）
+- Node：仓库根目录执行 `npx serve .` 或 `npx http-server -p 8080`
+- VS Code：装 **Live Server** 插件，右键 `index.html` → Open with Live Server
+- Python：`python -m http.server 8080`
+
+打开后从门户进入，或直接访问 `/prompt/`、`/judou/`。
 
 ## 哪里可以改（重点）
 
