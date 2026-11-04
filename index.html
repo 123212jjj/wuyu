@@ -27,6 +27,7 @@
       transition: transform .12s ease, box-shadow .12s ease;
     }
     a.card.judou { border-left-color: #d94732; }
+    a.card.workbench { border-left-color: #8a6d3b; }
     a.card:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(31,41,51,.12); }
     .card .kicker { font-size: 13px; color: #7b8794; letter-spacing: 2px; }
     .card h2 { margin: 8px 0 10px; font-size: 22px; }
@@ -35,6 +36,7 @@
     .card ul li { margin: 3px 0; }
     .go { display: inline-block; font-size: 15px; font-weight: 600; color: #2f7d5b; }
     .card.judou .go { color: #d94732; }
+    .card.workbench .go { color: #8a6d3b; }
     footer { margin-top: 34px; font-size: 13px; color: #8291a0; }
     code { background: #ecefed; padding: 1px 6px; border-radius: 6px; font-size: 13px; }
   </style>
@@ -43,11 +45,10 @@
   <div class="wrap">
     <header>
       <h1>wuyu · 本地工作台集合</h1>
-      <p class="sub">两个独立小站，文件都在仓库里、可直接编辑，不是只读外链。</p>
+      <p class="sub">三个本地小站，文件都在仓库里、可直接编辑，不是只读外链。</p>
       <div class="hint">
-        两个小站使用了浏览器模块（ES Module），<strong>建议用本地服务器打开</strong>：在本仓库根目录运行
-        <code>python -m http.server 8080</code>（或 VS Code 的 Live Server），再访问
-        <code>http://localhost:8080/</code>。直接双击某些子页面可能被浏览器安全策略拦截脚本。
+        推荐直接双击仓库根目录的 <code>启动门户.bat</code>（直达某一站请用对应的 bat，详见 README）；
+        子站使用浏览器模块，直接双击 html 文件可能被浏览器安全策略拦截脚本。
       </div>
     </header>
 
@@ -75,10 +76,22 @@
         </ul>
         <span class="go">进入句读工作台 →</span>
       </a>
+
+      <a class="card workbench" href="./workbench/">
+        <span class="kicker">DELIVER WORKBENCH</span>
+        <h2>成品工作台 · 展示与资料</h2>
+        <p class="desc">成品工作台方法论介绍、真实界面截图与答辩成品对照，附带可下载的 Skill 文档、安装说明与 PPT 样例；纯静态展示页。</p>
+        <ul>
+          <li>页面文案与排版：<code>workbench/index.html</code>、<code>workbench/site.css</code></li>
+          <li>滚动/轮播交互：<code>workbench/site.mjs</code></li>
+          <li>截图与对照图：<code>workbench/assets/</code>；下载资料：<code>workbench/downloads/</code>、<code>workbench/deliver-workbench/</code></li>
+        </ul>
+        <span class="go">进入成品工作台 →</span>
+      </a>
     </section>
 
     <footer>
-      目录：<code>prompt/</code> 提示词助手（明文源码，易改） · <code>judou/</code> 句读静态成品 · 详细改动位置见仓库 README.md。
+      目录：<code>prompt/</code> 提示词助手（明文源码，易改） · <code>judou/</code> 句读静态成品 · <code>workbench/</code> 成品工作台展示站 · 详细改动位置见仓库 README.md。
     </footer>
   </div>
 </body>
