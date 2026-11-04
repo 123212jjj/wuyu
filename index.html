@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="wuyu 本地工作台集合：提示词助手 + 句读文案工作台，源码与静态文件均可直接修改。">
+  <title>wuyu · 本地工作台集合</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; background: #f4f6f3; color: #1f2933;
+      font-family: "PingFang SC", "Microsoft YaHei", "Segoe UI", system-ui, sans-serif;
+      line-height: 1.6; padding: 48px 24px;
+    }
+    .wrap { max-width: 880px; margin: 0 auto; }
+    header h1 { font-size: 30px; margin: 0 0 8px; letter-spacing: 1px; }
+    header p.sub { margin: 0 0 6px; color: #52606d; }
+    .hint {
+      background: #eef2ec; border: 1px solid #d6e0d2; border-radius: 10px;
+      padding: 12px 16px; font-size: 14px; color: #3e4c59; margin: 22px 0 30px;
+    }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+    a.card {
+      display: block; text-decoration: none; color: inherit; background: #fff;
+      border: 1px solid #e2e8e1; border-left: 5px solid #2f7d5b; border-radius: 14px;
+      padding: 24px 24px 20px; box-shadow: 0 2px 10px rgba(31,41,51,.05);
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+    a.card.judou { border-left-color: #d94732; }
+    a.card:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(31,41,51,.12); }
+    .card .kicker { font-size: 13px; color: #7b8794; letter-spacing: 2px; }
+    .card h2 { margin: 8px 0 10px; font-size: 22px; }
+    .card p.desc { margin: 0 0 14px; font-size: 15px; color: #52606d; }
+    .card ul { margin: 0 0 16px; padding-left: 18px; font-size: 14px; color: #616e7c; }
+    .card ul li { margin: 3px 0; }
+    .go { display: inline-block; font-size: 15px; font-weight: 600; color: #2f7d5b; }
+    .card.judou .go { color: #d94732; }
+    footer { margin-top: 34px; font-size: 13px; color: #8291a0; }
+    code { background: #ecefed; padding: 1px 6px; border-radius: 6px; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>wuyu · 本地工作台集合</h1>
+      <p class="sub">两个独立小站，文件都在仓库里、可直接编辑，不是只读外链。</p>
+      <div class="hint">
+        两个小站使用了浏览器模块（ES Module），<strong>建议用本地服务器打开</strong>：在本仓库根目录运行
+        <code>python -m http.server 8080</code>（或 VS Code 的 Live Server），再访问
+        <code>http://localhost:8080/</code>。直接双击某些子页面可能被浏览器安全策略拦截脚本。
+      </div>
+    </header>
+
+    <section class="cards">
+      <a class="card" href="./prompt/">
+        <span class="kicker">PROMPT WORKBENCH</span>
+        <h2>提示词助手</h2>
+        <p class="desc">把想做的事说清楚，按需补充一轮追问，整理出一份可直接交给 AI 的提示词草稿，支持复制与下载 TXT。主流程纯本地运行。</p>
+        <ul>
+          <li>场景分类与示例：<code>prompt/core.mjs</code> 顶部 <code>categories</code></li>
+          <li>提示词模板措辞：<code>prompt/core.mjs</code> 的 <code>composePreview</code></li>
+          <li>界面文案与排版：<code>prompt/index.html</code>、<code>prompt/style.css</code></li>
+        </ul>
+        <span class="go">进入提示词助手 →</span>
+      </a>
+
+      <a class="card judou" href="./judou/">
+        <span class="kicker">JUDOU STUDIO</span>
+        <h2>句读 · 多平台文案工作台</h2>
+        <p class="desc">一句话起稿，适配小红书、公众号、抖音、B 站等平台，含封面预览与发布前检查。当前为可运行的静态成品。</p>
+        <ul>
+          <li>网页标题与描述：<code>judou/index.html</code></li>
+          <li>配图素材：<code>judou/assets/*.jpg</code>（同名替换即可）</li>
+          <li>界面细节与交互在打包脚本内，改动门槛较高（见 README 说明）</li>
+        </ul>
+        <span class="go">进入句读工作台 →</span>
+      </a>
+    </section>
+
+    <footer>
+      目录：<code>prompt/</code> 提示词助手（明文源码，易改） · <code>judou/</code> 句读静态成品 · 详细改动位置见仓库 README.md。
+    </footer>
+  </div>
+</body>
+</html>
