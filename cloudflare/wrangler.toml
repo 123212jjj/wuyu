@@ -1,0 +1,11 @@
+name = "judou-ark-proxy"
+main = "worker.js"
+compatibility_date = "2026-01-01"
+
+# 部署前在 Cloudflare 控制台给这个 Worker 加环境变量（Secret）：
+#   ARK_API_KEY = 你的火山方舟 API Key
+#   ARK_MODEL   = 可选，固定模型或 ep-xxxx 接入点
+#
+# 用 wrangler CLI 时：
+#   npx wrangler deploy
+#   npx wrangler secret put ARK_API_KEY
