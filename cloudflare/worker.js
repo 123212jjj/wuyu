@@ -59,7 +59,8 @@ export default {
           model,
           messages: payload.messages,
           temperature: typeof payload.temperature === 'number' ? payload.temperature : 0.85,
-          max_tokens: 2400,
+          max_tokens: payload.max_tokens || 2400,
+          ...(payload.thinking ? { thinking: payload.thinking } : {}),
         }),
       });
       return new Response(await upstream.text(), {
