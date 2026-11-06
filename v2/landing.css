@@ -659,3 +659,14 @@ main { max-width: 1080px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 36px); }
   .how-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .issue-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* 真实平台图标 */
+img.ico {
+  display: block;
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+  border-radius: 7px;
+  background: none;
+  border: 0;
+}
