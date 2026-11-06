@@ -1,134 +1,44 @@
-# wuyu
+# 拾句 SHIJU · 多平台文案工作台（发布仓库）
 
-本地工作台集合：把三个可运行的小站收进同一个仓库，**文件全部落地为本地可编辑内容**（不是只读外链或 iframe），根目录 `index.html` 是导航门户。
+一句话生成小红书 / 公众号 / 抖音 / B站文案，内置封面工坊、豆包文案与配图、登录页。
+根目录 `index.html` 是导航门户；本仓库同时存放 **v1 正式版**、**v2 开发版** 与成品工作台展示页。
 
-> 线上版：已用 GitHub Pages 发布 `main` 分支根目录，点开即可用（公开可见）；本地仍可双击 bat 修改、预览后再提交。
-
-## 目录结构
-
-```
-.
-├── 启动门户.bat / 启动-提示词助手.bat / 启动-句读工作台.bat / 启动-成品工作台.bat  # 双击即用入口
-├── serve.ps1                  # 零依赖本地静态服务器（启动器本体，Windows 自带 PowerShell 运行）
-├── index.html                 # 根导航门户（三张卡片进入三个小站）
-├── prompt/                    # 提示词助手 Prompt Workbench（明文源码，最好改）
-│   ├── index.html             # 页面结构与可见文案
-│   ├── style.css              # 配色、布局、样式
-│   ├── app.mjs                # 界面交互逻辑
-│   ├── core.mjs               # 场景库、追问规则、提示词模板（改内容重点看这里）
-│   ├── attachments.mjs        # 附件读取流程（纯文本直读）
-│   ├── speech.mjs             # 浏览器语音输入
-│   ├── document-parser.mjs   # Office/PDF 解析参考源码（高级，见下方限制）
-│   └── favicon.svg
-├── judou/                     # 拾句 SHIJU 主站 · 多平台文案工作台（Vite 构建的静态成品，四个独立页面）
-│   ├── index.html             # 入口：标题、描述、资源引用
-│   ├── assets/                # 打包后的 js/css + 配图 *.jpg
-│   ├── fonts/                 # 网页字体
-│   └── .nojekyll
-└── workbench/                 # 成品工作台展示站（说明、截图、可下载资料与 Skill 文档）
-    ├── index.html / site.css / site.mjs / favicon.svg
-    ├── assets/                # 界面截图与成品对照图
-    ├── downloads/             # PPT 样例与实验记录
-    └── deliver-workbench/     # Skill 文档（SKILL.md / INSTALL.md / references）
-```
-
-## 在线访问（GitHub Pages）
-
-已发布到 GitHub Pages（公开可见，点开即用）：
+## 线上地址
 
 | 页面 | 地址 |
 |---|---|
-| 总门户 | https://123212jjj.github.io/wuyu/ |
-| 提示词助手 | https://123212jjj.github.io/wuyu/prompt/ |
-| 拾句工作台 | https://123212jjj.github.io/wuyu/judou/ |
-| 成品工作台 | https://123212jjj.github.io/wuyu/workbench/ |
+| 门户 | <https://123212jjj.github.io/wuyu/> |
+| v1 主站（稳定版） | <https://123212jjj.github.io/wuyu/judou/> |
+| v2 开发版 | <https://123212jjj.github.io/wuyu/v2/> |
+| 成品工作台 | <https://123212jjj.github.io/wuyu/workbench/> |
 
-> 每次向 `main` 推送后，GitHub 会自动重新构建并更新线上版，通常几十秒到一两分钟生效；页面资源均为相对路径，在线 `/wuyu/` 子路径与本地子目录结构一致。
+## 目录
 
-## 怎么在自己电脑上打开使用
+```
+wuyu/
+├── index.html          门户（卡片入口）
+├── judou/              v1 构建产物（由前端工程构建后覆盖）
+├── v2/                 v2 构建产物（由 发布-v2.bat 覆盖）
+├── workbench/          成品工作台展示站（静态，直接改）
+├── serve.ps1           本地静态服务（配合各 启动-*.bat）
+├── README.md
+└── .nojekyll           关闭 Jekyll
+```
 
-子站用了浏览器模块（ES Module），直接双击 HTML 文件会被浏览器安全策略拦截脚本，所以**用仓库自带的启动器起一个本地小服务**即可，不需要安装 Node 或 Python。
+## 版本
 
-### 最快：双击启动（Windows）
-在仓库根目录双击对应文件，会自动弹出服务窗口并用默认浏览器打开：
+| 版本 | 标记 | 说明 |
+|---|---|---|
+| v1.0.0 | tag `v1.0.0`、分支 `backup/v1-20261106` | 首个稳定版：8 版式 / 11 字体 / 30 素材 / 登录 / 豆包文案与配图 |
+| v2 | 目录 `v2/` | 从 v1 独立出来的新版工作区，视觉与交互重做中 |
 
-| 想打开 | 双击哪个文件 |
-|---|---|
-| 全部应用的总门户（再点卡片进入） | `启动门户.bat` |
-| 只打开「提示词助手」 | `启动-提示词助手.bat` |
-| 只打开「句读工作台」 | `启动-句读工作台.bat` |
-| 只打开「成品工作台」展示站 | `启动-成品工作台.bat` |
+## 本地修改方式
 
-- 启动后浏览器地址类似 `http://127.0.0.1:8099/`；若 8099 被占用会自动换端口，以黑色窗口里打印的地址为准。
-- 用完直接**关闭那个黑色窗口**，服务即停止，不会常驻后台。
-- 启动器本体是 `serve.ps1`（Windows 自带 PowerShell 运行的零依赖静态服务器），四个 `.bat` 只是它的快捷入口。
+- **成品工作台**：`workbench/` 里是明文 HTML/CSS/JS，直接改。
+- **v1 / v2 主站**：仓库里是 Vite 构建后的压缩产物，不能手改；需在前端工程里改源码后重新构建，再把 `dist/` 覆盖到 `judou/` 或 `v2/`。
+- 本地预览：双击 `启动门户.bat`、`启动-句读工作台.bat`、`启动-成品工作台.bat`。
 
-### 备选方式（电脑已装相应工具时）
-- Node：仓库根目录执行 `npx serve .` 或 `npx http-server -p 8080`
-- VS Code：装 **Live Server** 插件，右键 `index.html` → Open with Live Server
-- Python：`python -m http.server 8080`
+## 部署
 
-打开后从门户进入，或直接访问 `/prompt/`、`/judou/`、`/workbench/`。
-
-## 哪里可以改（重点）
-
-### 1. `prompt/` 提示词助手 —— 明文源码，直接改
-
-| 想改什么 | 改哪个文件 |
-|---|---|
-| 顶部标题、按钮、说明文字、弹窗文案 | `prompt/index.html` |
-| 四个场景（报表分析 / 文档写作 / PPT 制作 / 检索摘要）的名称、示例、引导要求 | `prompt/core.mjs` 顶部的 `categories` |
-| 追问什么时候出现、给出哪些选项 | `prompt/core.mjs` 的 `nextQuestion()` |
-| 最终提示词的章节结构、模板措辞、固定要求 | `prompt/core.mjs` 的 `composePreview()` |
-| 颜色、间距、排版 | `prompt/style.css` |
-| 点击、提交、复制、下载等交互 | `prompt/app.mjs` |
-
-改完保存，刷新浏览器即可看到效果（走本地服务器时无缓存问题）。
-
-### 2. `judou/` 拾句 —— 每个功能都是一个独立页面
-
-- **不再有弹窗**：图片工坊 `#studio`、文案结果 `#result`、分享协作 `#share`、使用说明 `#help`、登录 `#login`、发布中心 `#publish`。每个地址都能直接打开、刷新、收藏或分享，浏览器前进后退可用，`Esc` 或「返回创作台」回到创作台。
-- 左侧边栏在创作台与所有页面常驻，可直接在这些页面之间切换。
-- **容易改**：`judou/index.html` 里的网页标题 `title`、描述 `meta description`；`judou/assets/` 下的配图（`citrus-table.jpg`、`green-orchard.jpg`、`plum-fruit.jpg`、`plum-soda.jpg`、`slow-morning.jpg`、`summer-drink.jpg`）**同名替换**即可保持引用不变。
-- **不建议手改**：`judou/assets/index-*.js`、`index-*.css` 是 Vite 构建压缩后的打包产物，变量被压缩、内容挤在单行里。要改界面文案或交互，需改前端源码（Vite + React，`base: './'` 以适配子目录）后重新 `vite build`，再把 `dist/` 里的 `index.html`、`assets/`、`fonts/` 覆盖到本目录。
-- `judou/assets/CREDITS.md` 保留了配图素材来源说明。
-
-### 3. `workbench/` 成品工作台展示站 —— 明文文件，可直接改
-
-| 想改什么 | 改哪个文件 |
-|---|---|
-| 页面文案、章节顺序、按钮链接、表格说明 | `workbench/index.html` |
-| 配色、版式、动画 | `workbench/site.css` |
-| 滚动分章、轮播切换、截图切换等交互 | `workbench/site.mjs` |
-| 界面截图 / 成品对照图 | `workbench/assets/*.png`、`workbench/assets/*.jpg`（同名替换） |
-| 可下载的 Skill 与安装/说明文档 | `workbench/deliver-workbench/`、`workbench/downloads/` |
-
-> 该目录是上游仓库最新版自带的子站，纯静态、内部全部使用 `./` 相对引用；其中的外链（GitHub、安装示例链接）保持原样未动。
-
-## 为适应子目录已做的适配
-
-拾句新版在构建时就使用相对 `base: './'` 输出，资源全部相对引用，放进 `/wuyu/judou/` 子目录即可直接运行，不再需要逐文件改写路径：
-
-- `judou/index.html`：`./assets/…`、`./fonts/…` 全部相对引用；
-- 打包 CSS：字体使用 `url(../fonts/…)`，从 `assets/` 目录指回 `fonts/`；
-- 打包 JS：配图使用 `assets/*.jpg` 相对引用，跟随页面地址解析；
-- 因此线上 `/wuyu/judou/` 与本地仓库目录结构一致，刷新任意 `#页面` 地址都能正常加载。
-
-`workbench/` 内部本来就是 `./` 相对引用、无需改路径；仅把顶部「← 返回句读」链接由 `../` 调整为 `../judou/`，使其回到本仓库的拾句主站。
-
-提示词助手 `prompt/` 内部原本就是相对引用（`./style.css`、`./app.mjs`、`./core.mjs`），无需改写即可在子目录运行。
-
-## 已知限制
-
-- **提示词助手的 Office/PDF 附件解析**：`document-parser.mjs` 在浏览器直开模式下依赖打包环境（fflate、fast-xml-parser、xlsx、pdfjs 等）；纯文本类 `.txt/.md/.csv` 可直接读取，Word/Excel/PPT/PDF 解析需要按上游方式接入依赖后才完整可用，不影响"输入需求 → 整理提示词草稿 → 复制/下载"主流程。
-- **拾句的源码不在本仓库**：本仓库落地的是构建后的静态成品；界面与交互改动需要在前端源码工程（Vite + React）里改完重新构建，再覆盖 `judou/`。
-- 已通过 GitHub Pages 以 `main` 分支根目录发布纯静态站点；仓库根目录的 `.nojekyll` 关闭 Jekyll 处理，保证 `.md`、`.pptx` 等原始文件原样可访问，而不被忽略或转换。
-
-## 来源与归属
-
-- 提示词助手 Prompt Workbench：派生自公开仓库 `lamongl/-`，原始许可证为 MIT（上游根目录 `LICENSE`），本目录保留其可运行源码用于本地学习与二次修改。
-- 拾句 SHIJU 主站：前端最早来自公开仓库 `caojingxuan14/caojingxuan14.github.io`（上游提交 `8e75176`），现已升级为「拾句 SHIJU」新版，并由 Vite + React 源码构建后落入 `judou/`；配图素材来源见 `judou/assets/CREDITS.md`。
-  - 本轮改动：将原先以弹窗打开的面板改为独立页面（图片工坊、文案结果、分享协作、使用说明），并移除「封面模板」「品牌声音」「版本历史」三个页面；侧边栏在所有页面常驻；创作台右上角新增登录入口（本机演示登录）；素材库扩充到 30 张本地照片；文案与配图接豆包（Seed 2.1 / Seedream）。
-  - 构建产物为 `dist/index.html`、`dist/assets/`、`dist/fonts/`；`judou/` 与该构建一一对应（另保留 `.nojekyll`）。
-- 成品工作台 `workbench/`：同属该公开仓库最新版自带子站，37 个文件整体落入 `workbench/`（展示页、截图、PPT 样例与 Skill 文档）；除「返回句读」链接指向 `../judou/` 外，其余原样保留，外链未改动。
-- 仅做了目录归并、相对路径适配和本地可编辑化整理，未改动各应用的核心行为。
+本仓库 `main` 分支根目录已作为 GitHub Pages 发布源，`git push` 后 1–3 分钟自动更新；
+页面 HTML 有缓存，强制刷新（Ctrl+Shift+R）或加 `?v=数字` 可立即看到最新内容。
