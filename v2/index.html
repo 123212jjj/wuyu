@@ -19,6 +19,8 @@
       </a>
       <nav class="nav__links">
         <a href="#interface">界面</a>
+        <a href="#proof">对比</a>
+        <a href="#how">操作</a>
         <a href="#models">模型</a>
         <a href="#install">安装</a>
       </nav>
@@ -26,6 +28,7 @@
     </header>
 
     <main>
+      <!-- ===== Hero ===== -->
       <section class="hero">
         <h1>一句话。<br /><em>编译成能发的。</em></h1>
         <p class="lead">把想法交给 AI，让一套内容直接落地。</p>
@@ -37,27 +40,15 @@
         <p class="meta meta--models">豆包 Seed 2.1 Lite · Seedream 5.0 flash · Seed 2.1 Turbo</p>
 
         <div class="showcase">
-          <article class="float float--xhs">
-            <span class="ico ico--xhs">红</span>
-            <div><b>小红书笔记</b><small>标题 · 正文 · 话题</small></div>
-          </article>
-          <article class="float float--wx">
-            <span class="ico ico--wx">微</span>
-            <div><b>公众号长文</b><small>配文 · 分段 · 排版</small></div>
-          </article>
-          <article class="float float--dy">
-            <span class="ico ico--dy">抖</span>
-            <div><b>抖音分镜</b><small>0-3s · 口播稿</small></div>
-          </article>
-          <article class="float float--bili">
-            <span class="ico ico--bili">B</span>
-            <div><b>B站脚本</b><small>开场 · 结构 · 收尾</small></div>
-          </article>
+          <article class="float float--xhs"><span class="ico ico--xhs">红</span><div><b>小红书笔记</b><small>标题 · 正文 · 话题</small></div></article>
+          <article class="float float--wx"><span class="ico ico--wx">微</span><div><b>公众号长文</b><small>配文 · 分段 · 排版</small></div></article>
+          <article class="float float--dy"><span class="ico ico--dy">抖</span><div><b>抖音分镜</b><small>0-3s · 口播稿</small></div></article>
+          <article class="float float--bili"><span class="ico ico--bili">B</span><div><b>B站脚本</b><small>开场 · 结构 · 收尾</small></div></article>
 
           <div class="result" aria-label="编译结果预览">
             <p class="result__label">编译结果 · 小红书</p>
             <h3>下午的咖啡，配满屏简约大字母</h3>
-            <p class="result__dek">用一杯咖啡，接住整个下午的松驰感。</p>
+            <p class="result__dek">用一杯咖啡，接住整个下午的松弛感。</p>
             <p class="result__body">光落在杯垫上的时候，连待办都慢了下来。没有花哨的摆件，只有黑白字母和浅棕的咖啡液。</p>
             <div class="result__tags"><span>#咖啡日常</span><span>#简约生活</span><span>#下午时光</span></div>
             <div class="result__foot"><span>正在检查：字数 / 话题 / 安全区</span><i>98%</i></div>
@@ -65,12 +56,11 @@
         </div>
       </section>
 
+      <!-- ===== 想法逐步成型 ===== -->
       <section class="band" id="interface">
         <h2>想法，逐步成型。</h2>
         <p class="band__sub">把想法放进来。</p>
-        <p class="lead">
-          一句交代就够：写清产品、人群、语气。AI 先拆骨架，再适配平台，最后把标题、正文、封面、话题一起编译出来。
-        </p>
+        <p class="lead">一句交代就够：写清产品、人群、语气。AI 先拆骨架，再适配平台，最后把标题、正文、封面、话题一起编译出来。</p>
 
         <ol class="steps">
           <li class="is-on">写一句交代</li>
@@ -79,79 +69,120 @@
           <li>检查并发布</li>
         </ol>
 
-        <div class="window">
-          <div class="window__bar">
-            <span class="window__dot"></span><span class="window__dot"></span><span class="window__dot"></span>
-            <span class="window__title">真实工作台 · 写一句交代</span>
-          </div>
-          <div class="window__body">
-            <div class="window__main">
-              <p class="window__label">这次想表达什么？</p>
-              <p class="window__input">咖啡，简约，日漫风格，下午的松驰感</p>
-              <div class="window__row">
-                <span class="pill">小红书</span><span class="pill">公众号</span><span class="pill">抖音</span><span class="pill">B站</span>
-              </div>
-              <div class="window__row window__row--tone">
-                <span class="chip is-on">松驰克制</span><span class="chip">真诚种草</span><span class="chip">故事叙述</span><span class="chip">干货专业</span>
-              </div>
-              <div class="window__row">
-                <span class="window__hint">编译后会生成：标题 / 配文 / 正文 / 封面文案 / 话题</span>
-                <button type="button" class="window__go">编译小红书文案</button>
-              </div>
-            </div>
-            <aside class="window__side">
-              <p class="side__title">你负责想法，<br />AI 负责落地。</p>
-              <ul>
-                <li><b>先拆骨架</b><span>提炼内容结构与目标读者</span></li>
-                <li><b>再适配平台</b><span>语气、字数、话题按平台来</span></li>
-                <li><b>最后成套</b><span>标题、正文、封面一起给全</span></li>
-                <li><b>发布前检查</b><span>字数、话题、封面安全区</span></li>
-              </ul>
-            </aside>
-          </div>
+        <div class="shot-frame">
+          <div class="shot-frame__bar"><span></span><span></span><span></span><em>真实工作台 · 写一句交代</em></div>
+          <img src="./assets/app-editor.png" alt="文案编译台创作台界面" loading="lazy" />
         </div>
       </section>
 
-      <section class="outputs">
-        <h2>一次编译，四端可用。</h2>
-        <p class="lead">不是一段通用文案，而是按每个平台重新写过的一套。</p>
-        <div class="output-grid">
-          <article class="output">
-            <span class="ico ico--xhs">红</span>
-            <h3>小红书</h3>
-            <p>6 图笔记 · 短句分段 · 5-6 个话题</p>
-            <ul><li>标题 ≤20 字</li><li>正文 3-5 段</li><li>互动引导</li></ul>
+      <!-- ===== 从想法到成品（切换） ===== -->
+      <section class="tabs" id="workflow">
+        <h2>从想法，到能带走的东西。</h2>
+        <p class="lead">编译完成后直接复制，或下载成文件带走。</p>
+
+        <div class="seg" role="tablist" aria-label="切换界面截图">
+          <button type="button" class="seg__btn is-on" data-shot="result" role="tab" aria-selected="true">编译文案</button>
+          <button type="button" class="seg__btn" data-shot="studio" role="tab" aria-selected="false">带走成品</button>
+        </div>
+
+        <figure class="shot">
+          <img id="shot-img" src="./assets/app-result.png" alt="文案结果页面" loading="lazy" />
+          <figcaption>
+            <span id="shot-caption">编译结果 · 标题 / 配文 / 正文 / 话题，逐项可复制</span>
+            <a class="shot__link" href="./studio/">去工作台试试 →</a>
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- ===== 大字号宣言 ===== -->
+      <section class="statement">
+        <p>你的想法。你的 AI。</p>
+        <h2>少一点来回折腾，<br />多一点完成的感觉。</h2>
+      </section>
+
+      <!-- ===== 明暗对比：好不好，让文案说话 ===== -->
+      <section class="proof light" id="proof">
+        <h2>好不好，<br />让文案说话。</h2>
+        <p class="lead">同一句交代，同一件事。左边是编译台，右边是随手一写。</p>
+
+        <div class="seg seg--dark" role="tablist" aria-label="对比切换">
+          <button type="button" class="seg__btn is-on" data-compare="on" role="tab" aria-selected="true">用文案编译台</button>
+          <button type="button" class="seg__btn" data-compare="off" role="tab" aria-selected="false">不用编译台</button>
+        </div>
+
+        <div class="examples" id="examples">
+          <article class="example is-on" data-kind="on">
+            <p class="example__brief">例子 01 · 交代：咖啡，简约，日漫风格，下午的松弛感</p>
+            <h3>下午的咖啡，配满屏简约大字母</h3>
+            <p class="example__dek">用一杯咖啡，接住整个下午的松弛感。</p>
+            <p>光落在杯垫上的时候，连待办都慢了下来。没有花哨的摆件，只有黑白字母和浅棕的咖啡液。</p>
+            <p>不发朋友圈也没关系，坐在窗边把这一杯喝完，今天就算收好尾了。</p>
+            <div class="example__tags"><span>#咖啡日常</span><span>#简约生活</span><span>#下午时光</span><span>#松弛感</span></div>
+            <p class="example__hook">评论区聊聊：你下午最常喝哪一杯？</p>
           </article>
-          <article class="output">
-            <span class="ico ico--wx">微</span>
-            <h3>公众号</h3>
-            <p>长文 · 摘要 · 小标题节奏</p>
-            <ul><li>标题 ≤64 字</li><li>正文 3-6 段</li><li>可直接排版</li></ul>
+
+          <article class="example" data-kind="on">
+            <p class="example__brief">例子 02 · 交代：护肤新品，平价，学生党，别太夸张</p>
+            <h3>平价补水，先别急着买贵的</h3>
+            <p class="example__dek">几十块的补水，够撑过换季的干。</p>
+            <p>先用了一周才敢说：不刺痛、不搓泥，早上上妆也稳。成分表干净，没有把“抗老”写在脸上。</p>
+            <p>学生党预算有限，先把基础保湿做稳，比什么都实在。</p>
+            <div class="example__tags"><span>#平价护肤</span><span>#学生党</span><span>#换季保湿</span><span>#空瓶记</span></div>
+            <p class="example__hook">你们换季最离不开哪一步？</p>
           </article>
-          <article class="output">
-            <span class="ico ico--dy">抖</span>
-            <h3>抖音</h3>
-            <p>分镜口播 · 时间码 · 前 3 秒钩子</p>
-            <ul><li>0-3s 抓人</li><li>3-4 段分镜</li><li>口播语气</li></ul>
+
+          <article class="example" data-kind="on">
+            <p class="example__brief">例子 03 · 交代：独立书店，周末活动，想写得温柔一点</p>
+            <h3>周末的书店，灯亮得比平时久一点</h3>
+            <p class="example__dek">把两小时交给一本书，也交给自己。</p>
+            <p>周六晚上七点，二层靠窗的位置留着。带一本读到一半的书来，换一段安静的时间。</p>
+            <p>没有讲座、没有打卡任务，只有热水和愿意坐下来的人。</p>
+            <div class="example__tags"><span>#独立书店</span><span>#周末去哪儿</span><span>#读书会</span><span>#城市漫游</span></div>
+            <p class="example__hook">你上一次完整读完一本书是什么时候？</p>
           </article>
-          <article class="output">
-            <span class="ico ico--bili">B</span>
-            <h3>B站</h3>
-            <p>脚本结构 · 开场 · 信息密度</p>
-            <ul><li>开场 1 句</li><li>2-4 段结构</li><li>结尾引导</li></ul>
+
+          <article class="example example--raw" data-kind="off">
+            <p class="example__brief">不用编译台的版本 · 同一句交代</p>
+            <h3>好喝又好看的咖啡推荐</h3>
+            <p>今天下午喝了一杯咖啡，真的很好喝，颜色也很好看，简约风很大气，喜欢的朋友可以试试，喝完心情很好，推荐给大家！</p>
+            <p class="example__bad">问题：没有标题结构、没有配文、没有话题、没有互动引导，平台适配为零。</p>
           </article>
+        </div>
+
+        <div class="pager">
+          <button type="button" class="pager__btn" id="prev" aria-label="上一个例子">←</button>
+          <span id="pager-label">第 1 / 3 例</span>
+          <button type="button" class="pager__btn" id="next" aria-label="下一个例子">→</button>
         </div>
       </section>
 
-      <section class="features">
-        <h2>一套内容，不是一段文字。</h2>
-        <div class="cards">
-          <article class="card"><p class="card__no">01</p><h3>文案编译</h3><p>标题、配文、两条备选标题、正文、互动引导、话题，按平台规则一次生成。</p></article>
-          <article class="card"><p class="card__no">02</p><h3>封面工坊</h3><p>8 种版式、11 种字体、30 张素材，还能用 Seedream 直接生成配图。</p></article>
-          <article class="card"><p class="card__no">03</p><h3>发布前检查</h3><p>字数、话题、封面安全区逐项检查，复制或跳转平台后台一键完成。</p></article>
-        </div>
+      <!-- ===== 怎么操作 ===== -->
+      <section class="how" id="how">
+        <h2>怎么用，四步。</h2>
+        <ol class="how-list">
+          <li><b>① 写一句交代</b><span>产品 / 人群 / 语气，写清这三点就够了。越具体越贴。</span></li>
+          <li><b>② 选平台和语气</b><span>顶部选小红书 / 公众号 / 抖音 / B站，再挑一个语气方向。</span></li>
+          <li><b>③ 点「编译」</b><span>等 5–10 秒，标题、配文、备选标题、正文、互动引导、封面文案、话题一次给全。</span></li>
+          <li><b>④ 复制或发布</b><span>结果页可逐项复制，也能去封面工坊换图、调字体、套版式，再到发布中心。</span></li>
+        </ol>
+        <p class="note">首次使用需要填一个火山方舟 API Key（Key 只存本机，不经过任何服务器）。</p>
       </section>
 
+      <!-- ===== 已知问题 ===== -->
+      <section class="issues" id="issues">
+        <h2>现在的问题，也写清楚。</h2>
+        <p class="lead">这一版自己完整跑过一遍，下面是真实存在的限制，不藏着。</p>
+        <ul class="issue-list">
+          <li><b>AI 配图会提示额度用完</b><span>方舟「安心体验模式」额度耗完会返回 429，需在控制台关闭该模式或充值。</span></li>
+          <li><b>线上需要自己填 Key</b><span>GitHub Pages 是纯静态，不能内置 Key；本地启动服务则自动读取。</span></li>
+          <li><b>登录是本机演示</b><span>账号只存在浏览器，换设备不会同步，也没有找回密码。</span></li>
+          <li><b>生成的图片链接约 24 小时过期</b><span>长期使用要先把图下载下来。</span></li>
+          <li><b>只开通了 Lite 文本模型</b><span>Seed 2.1 Pro / Turbo / Evolving 需要在方舟控制台另开。</span></li>
+          <li><b>字体靠 CDN 按需加载</b><span>首次选某款字体需要联网；离线环境会回退到系统字体。</span></li>
+        </ul>
+      </section>
+
+      <!-- ===== 模型 ===== -->
       <section class="models" id="models">
         <h2>接了什么，就写什么。</h2>
         <p class="lead">不包装参数，这里就是实际接入的模型。</p>
@@ -163,6 +194,7 @@
         <p class="note">Key 只保存在本机浏览器或本地服务，不上传、不进仓库。</p>
       </section>
 
+      <!-- ===== 安装 ===== -->
       <section class="install" id="install">
         <h2>本地跑，不怕哪天打不开。</h2>
         <ol class="install__steps">
@@ -181,5 +213,7 @@
       <span>文案编译台 · V2</span>
       <span>想法进来，成品出去。</span>
     </footer>
+
+    <script src="./landing.js"></script>
   </body>
 </html>
