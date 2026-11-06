@@ -2,44 +2,153 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#050609" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#050608" />
     <meta name="color-scheme" content="dark" />
-    <meta
-      name="description"
-      content="拾句 SHIJU — 一句话生成小红书、公众号、抖音、B站多平台内容的 AI 文案与封面创作台。"
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="拾句 SHIJU" />
-    <meta property="og:title" content="拾句 SHIJU · AI 多平台文案工作台" />
-    <meta
-      property="og:description"
-      content="一句起稿，四端成篇。文案、标题、话题、封面建议与发布前检查，在一个编辑器里完成。"
-    />
-    <meta property="og:url" content="https://caojingxuan14.github.io/" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="拾句 SHIJU · AI 多平台文案工作台" />
-    <meta
-      name="twitter:description"
-      content="一句起稿，四端成篇。小红书、公众号、抖音、B站四平台内容，一个编辑器完成。"
-    />
-    <link rel="preload" href="./fonts/noto-serif-sc-subset.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="./fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="./assets/plum-soda.jpg" as="image" fetchpriority="high" />
-    <title>拾句 SHIJU · AI 多平台文案工作台</title>
-    <link
-      rel="icon"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23f5f5f7'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' fill='%23050609' font-family='sans-serif' font-weight='700'%3E%E6%8B%BE%3C/text%3E%3C/svg%3E"
-    />
-    <style>
-      html { background: #050609; }
-      body { margin: 0; }
-      .boot { min-height: 100vh; display: grid; place-items: center; background: #050609; color: #f5f5f7; font-family: "PingFang SC", "Microsoft YaHei UI", sans-serif; letter-spacing: 0.16em; }
-    </style>
-    <script type="module" crossorigin src="./assets/index-DLKwHuEi.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-myc46DU8.css">
+    <meta name="format-detection" content="telephone=no,email=no,address=no" />
+    <meta name="description" content="文案编译台：把一句想法编译成小红书、公众号、抖音、B站能直接发布的成套内容，含封面工坊与发布前检查。" />
+    <title>文案编译台 · 一句话，编译成能发的</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23080a10'/%3E%3Ctext x='32' y='44' font-size='32' text-anchor='middle' fill='%23a9c6ff' font-family='sans-serif' font-weight='700'%3E%E7%BC%96%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./landing.css" />
   </head>
   <body>
-    <div id="root"><div class="boot">拾句 SHIJU</div></div>
+    <header class="nav">
+      <a class="nav__brand" href="./">
+        <span class="nav__seal">编</span>
+        <span class="nav__name">文案编译台</span>
+      </a>
+      <nav class="nav__links">
+        <a href="#interface">界面</a>
+        <a href="#models">模型</a>
+        <a href="#install">安装</a>
+      </nav>
+      <a class="nav__cta" href="./studio/">进入工作台</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">CONTENT COMPILER · V2</p>
+        <h1>一句话。<br /><em>编译成能发的。</em></h1>
+        <p class="lead">
+          把想法丢进来，AI 编译成小红书、公众号、抖音、B站能直接发布的一整套内容——
+          标题、配文、正文、封面文案、话题，一次给全。
+        </p>
+        <div class="actions">
+          <a class="btn btn--solid" href="./studio/">进入工作台</a>
+          <a class="btn btn--ghost" href="#interface">看它怎么编译</a>
+        </div>
+        <p class="meta">本地运行 · 接入豆包模型 · 开源仓库</p>
+
+        <ul class="chips" aria-label="已接入模型">
+          <li><b>豆包 Seed 2.1 Lite</b><span>文案生成</span></li>
+          <li><b>Seedream 5.0 flash</b><span>封面配图</span></li>
+          <li><b>Seed 2.1 Turbo</b><span>可选加速</span></li>
+        </ul>
+      </section>
+
+      <section class="band" id="interface">
+        <div class="band__head">
+          <p class="eyebrow">INTERFACE</p>
+          <h2>想法，逐步成型。</h2>
+          <p class="lead">先写一句交代，再选平台和语气。剩下的交给编译。</p>
+          <ol class="steps">
+            <li class="is-on">输入</li>
+            <li>编译</li>
+            <li>出稿</li>
+            <li>检查</li>
+          </ol>
+        </div>
+
+        <div class="mock" role="img" aria-label="文案编译台界面示意">
+          <div class="mock__bar">
+            <span class="mock__dot"></span><span class="mock__dot"></span><span class="mock__dot"></span>
+            <span class="mock__title">文案编译台 · 创作台</span>
+          </div>
+          <div class="mock__body">
+            <aside class="mock__rail">
+              <i class="is-on">创作台</i><i>图片工坊</i><i>文案结果</i><i>发布</i>
+            </aside>
+            <div class="mock__panel">
+              <div class="mock__platforms"><b>小红书</b><span>公众号</span><span>抖音</span><span>B站</span></div>
+              <p class="mock__input">咖啡，简约，下午的松弛感</p>
+              <div class="mock__row">
+                <span class="mock__pill">松弛克制</span>
+                <span class="mock__pill">真诚种草</span>
+                <span class="mock__pill">故事叙述</span>
+                <button type="button" class="mock__go">编译小红书文案</button>
+              </div>
+            </div>
+            <div class="mock__out">
+              <p class="mock__out-label">编译结果</p>
+              <h4>下午的咖啡，配满屏简约大字母</h4>
+              <p>光落在杯垫上的时候，连待办都慢了下来。</p>
+              <div class="mock__tags"><span>#咖啡日常</span><span>#松弛感</span><span>#下午时光</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="features">
+        <p class="eyebrow">WHAT YOU GET</p>
+        <h2>一套内容，不是一段文字。</h2>
+        <div class="cards">
+          <article class="card">
+            <p class="card__no">01</p>
+            <h3>文案编译</h3>
+            <p>标题、配文、两条备选标题、正文、互动引导、话题——按平台规则一次生成。</p>
+          </article>
+          <article class="card">
+            <p class="card__no">02</p>
+            <h3>封面工坊</h3>
+            <p>8 种版式、11 种字体、30 张素材，还能用 Seedream 直接生成配图。</p>
+          </article>
+          <article class="card">
+            <p class="card__no">03</p>
+            <h3>发布前检查</h3>
+            <p>字数、话题、封面安全区逐项检查，复制或跳转平台后台一键完成。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="models" id="models">
+        <p class="eyebrow">MODELS</p>
+        <h2>接了什么，就写什么。</h2>
+        <p class="lead">不包装、不吹参数，这里就是实际接入的模型。</p>
+        <div class="model-list">
+          <div class="model">
+            <div><b>豆包 Seed 2.1 Lite</b><small>doubao-seed-2-1-lite-260915</small></div>
+            <span class="model__tag">文案 · 已接入</span>
+          </div>
+          <div class="model">
+            <div><b>Seedream 5.0 flash</b><small>doubao-seedream-5-0-flash-260915</small></div>
+            <span class="model__tag">配图 · 已接入</span>
+          </div>
+          <div class="model">
+            <div><b>豆包 Seed 2.1 Turbo / Pro</b><small>需在方舟控制台开通</small></div>
+            <span class="model__tag model__tag--muted">可选</span>
+          </div>
+        </div>
+        <p class="note">Key 只保存在本机浏览器或本地服务，不上传、不进仓库。</p>
+      </section>
+
+      <section class="install" id="install">
+        <p class="eyebrow">RUN IT</p>
+        <h2>本地跑，不怕哪天打不开。</h2>
+        <ol class="install__steps">
+          <li><b>准备</b><span>Node.js 22+，一个火山方舟 API Key</span></li>
+          <li><b>启动</b><span>双击「启动-豆包模式.bat」，浏览器自动打开 8099</span></li>
+          <li><b>接入</b><span>复制 Key 到本地文件，或粘贴到页面「接口」里</span></li>
+        </ol>
+        <div class="actions">
+          <a class="btn btn--solid" href="./studio/">进入工作台</a>
+          <a class="btn btn--ghost" href="https://github.com/123212jjj/wuyu" target="_blank" rel="noopener noreferrer">查看仓库</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>文案编译台 · V2</span>
+      <span>想法进来，成品出去。</span>
+    </footer>
   </body>
 </html>
