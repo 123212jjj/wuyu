@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#050608" />
     <meta name="color-scheme" content="dark" />
     <meta name="format-detection" content="telephone=no,email=no,address=no" />
-    <meta name="description" content="文案编译台：把一句想法编译成小红书、公众号、抖音、B站能直接发布的成套内容，含封面工坊与发布前检查。" />
+    <meta name="description" content="文案编译台：把一句想法编译成小红书、公众号、抖音、B站能直接发布的成套内容，含封面工坊与发布前检查。接入豆包 Seed 2.1 与 Seedream 5.0。" />
     <title>文案编译台 · 一句话，编译成能发的</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23080a10'/%3E%3Ctext x='32' y='44' font-size='32' text-anchor='middle' fill='%23a9c6ff' font-family='sans-serif' font-weight='700'%3E%E7%BC%96%3C/text%3E%3C/svg%3E" />
     <link rel="stylesheet" href="./landing.css" />
@@ -27,117 +27,148 @@
 
     <main>
       <section class="hero">
-        <p class="eyebrow">CONTENT COMPILER · V2</p>
         <h1>一句话。<br /><em>编译成能发的。</em></h1>
-        <p class="lead">
-          把想法丢进来，AI 编译成小红书、公众号、抖音、B站能直接发布的一整套内容——
-          标题、配文、正文、封面文案、话题，一次给全。
-        </p>
+        <p class="lead">把想法交给 AI，让一套内容直接落地。</p>
         <div class="actions">
           <a class="btn btn--solid" href="./studio/">进入工作台</a>
           <a class="btn btn--ghost" href="#interface">看它怎么编译</a>
         </div>
-        <p class="meta">本地运行 · 接入豆包模型 · 开源仓库</p>
+        <p class="meta">开源免费 · v2.0</p>
+        <p class="meta meta--models">豆包 Seed 2.1 Lite · Seedream 5.0 flash · Seed 2.1 Turbo</p>
 
-        <ul class="chips" aria-label="已接入模型">
-          <li><b>豆包 Seed 2.1 Lite</b><span>文案生成</span></li>
-          <li><b>Seedream 5.0 flash</b><span>封面配图</span></li>
-          <li><b>Seed 2.1 Turbo</b><span>可选加速</span></li>
-        </ul>
+        <div class="showcase">
+          <article class="float float--xhs">
+            <span class="ico ico--xhs">红</span>
+            <div><b>小红书笔记</b><small>标题 · 正文 · 话题</small></div>
+          </article>
+          <article class="float float--wx">
+            <span class="ico ico--wx">微</span>
+            <div><b>公众号长文</b><small>配文 · 分段 · 排版</small></div>
+          </article>
+          <article class="float float--dy">
+            <span class="ico ico--dy">抖</span>
+            <div><b>抖音分镜</b><small>0-3s · 口播稿</small></div>
+          </article>
+          <article class="float float--bili">
+            <span class="ico ico--bili">B</span>
+            <div><b>B站脚本</b><small>开场 · 结构 · 收尾</small></div>
+          </article>
+
+          <div class="result" aria-label="编译结果预览">
+            <p class="result__label">编译结果 · 小红书</p>
+            <h3>下午的咖啡，配满屏简约大字母</h3>
+            <p class="result__dek">用一杯咖啡，接住整个下午的松驰感。</p>
+            <p class="result__body">光落在杯垫上的时候，连待办都慢了下来。没有花哨的摆件，只有黑白字母和浅棕的咖啡液。</p>
+            <div class="result__tags"><span>#咖啡日常</span><span>#简约生活</span><span>#下午时光</span></div>
+            <div class="result__foot"><span>正在检查：字数 / 话题 / 安全区</span><i>98%</i></div>
+          </div>
+        </div>
       </section>
 
       <section class="band" id="interface">
-        <div class="band__head">
-          <p class="eyebrow">INTERFACE</p>
-          <h2>想法，逐步成型。</h2>
-          <p class="lead">先写一句交代，再选平台和语气。剩下的交给编译。</p>
-          <ol class="steps">
-            <li class="is-on">输入</li>
-            <li>编译</li>
-            <li>出稿</li>
-            <li>检查</li>
-          </ol>
-        </div>
+        <h2>想法，逐步成型。</h2>
+        <p class="band__sub">把想法放进来。</p>
+        <p class="lead">
+          一句交代就够：写清产品、人群、语气。AI 先拆骨架，再适配平台，最后把标题、正文、封面、话题一起编译出来。
+        </p>
 
-        <div class="mock" role="img" aria-label="文案编译台界面示意">
-          <div class="mock__bar">
-            <span class="mock__dot"></span><span class="mock__dot"></span><span class="mock__dot"></span>
-            <span class="mock__title">文案编译台 · 创作台</span>
+        <ol class="steps">
+          <li class="is-on">写一句交代</li>
+          <li>确认平台与语气</li>
+          <li>编译成套内容</li>
+          <li>检查并发布</li>
+        </ol>
+
+        <div class="window">
+          <div class="window__bar">
+            <span class="window__dot"></span><span class="window__dot"></span><span class="window__dot"></span>
+            <span class="window__title">真实工作台 · 写一句交代</span>
           </div>
-          <div class="mock__body">
-            <aside class="mock__rail">
-              <i class="is-on">创作台</i><i>图片工坊</i><i>文案结果</i><i>发布</i>
-            </aside>
-            <div class="mock__panel">
-              <div class="mock__platforms"><b>小红书</b><span>公众号</span><span>抖音</span><span>B站</span></div>
-              <p class="mock__input">咖啡，简约，下午的松弛感</p>
-              <div class="mock__row">
-                <span class="mock__pill">松弛克制</span>
-                <span class="mock__pill">真诚种草</span>
-                <span class="mock__pill">故事叙述</span>
-                <button type="button" class="mock__go">编译小红书文案</button>
+          <div class="window__body">
+            <div class="window__main">
+              <p class="window__label">这次想表达什么？</p>
+              <p class="window__input">咖啡，简约，日漫风格，下午的松驰感</p>
+              <div class="window__row">
+                <span class="pill">小红书</span><span class="pill">公众号</span><span class="pill">抖音</span><span class="pill">B站</span>
+              </div>
+              <div class="window__row window__row--tone">
+                <span class="chip is-on">松驰克制</span><span class="chip">真诚种草</span><span class="chip">故事叙述</span><span class="chip">干货专业</span>
+              </div>
+              <div class="window__row">
+                <span class="window__hint">编译后会生成：标题 / 配文 / 正文 / 封面文案 / 话题</span>
+                <button type="button" class="window__go">编译小红书文案</button>
               </div>
             </div>
-            <div class="mock__out">
-              <p class="mock__out-label">编译结果</p>
-              <h4>下午的咖啡，配满屏简约大字母</h4>
-              <p>光落在杯垫上的时候，连待办都慢了下来。</p>
-              <div class="mock__tags"><span>#咖啡日常</span><span>#松弛感</span><span>#下午时光</span></div>
-            </div>
+            <aside class="window__side">
+              <p class="side__title">你负责想法，<br />AI 负责落地。</p>
+              <ul>
+                <li><b>先拆骨架</b><span>提炼内容结构与目标读者</span></li>
+                <li><b>再适配平台</b><span>语气、字数、话题按平台来</span></li>
+                <li><b>最后成套</b><span>标题、正文、封面一起给全</span></li>
+                <li><b>发布前检查</b><span>字数、话题、封面安全区</span></li>
+              </ul>
+            </aside>
           </div>
+        </div>
+      </section>
+
+      <section class="outputs">
+        <h2>一次编译，四端可用。</h2>
+        <p class="lead">不是一段通用文案，而是按每个平台重新写过的一套。</p>
+        <div class="output-grid">
+          <article class="output">
+            <span class="ico ico--xhs">红</span>
+            <h3>小红书</h3>
+            <p>6 图笔记 · 短句分段 · 5-6 个话题</p>
+            <ul><li>标题 ≤20 字</li><li>正文 3-5 段</li><li>互动引导</li></ul>
+          </article>
+          <article class="output">
+            <span class="ico ico--wx">微</span>
+            <h3>公众号</h3>
+            <p>长文 · 摘要 · 小标题节奏</p>
+            <ul><li>标题 ≤64 字</li><li>正文 3-6 段</li><li>可直接排版</li></ul>
+          </article>
+          <article class="output">
+            <span class="ico ico--dy">抖</span>
+            <h3>抖音</h3>
+            <p>分镜口播 · 时间码 · 前 3 秒钩子</p>
+            <ul><li>0-3s 抓人</li><li>3-4 段分镜</li><li>口播语气</li></ul>
+          </article>
+          <article class="output">
+            <span class="ico ico--bili">B</span>
+            <h3>B站</h3>
+            <p>脚本结构 · 开场 · 信息密度</p>
+            <ul><li>开场 1 句</li><li>2-4 段结构</li><li>结尾引导</li></ul>
+          </article>
         </div>
       </section>
 
       <section class="features">
-        <p class="eyebrow">WHAT YOU GET</p>
         <h2>一套内容，不是一段文字。</h2>
         <div class="cards">
-          <article class="card">
-            <p class="card__no">01</p>
-            <h3>文案编译</h3>
-            <p>标题、配文、两条备选标题、正文、互动引导、话题——按平台规则一次生成。</p>
-          </article>
-          <article class="card">
-            <p class="card__no">02</p>
-            <h3>封面工坊</h3>
-            <p>8 种版式、11 种字体、30 张素材，还能用 Seedream 直接生成配图。</p>
-          </article>
-          <article class="card">
-            <p class="card__no">03</p>
-            <h3>发布前检查</h3>
-            <p>字数、话题、封面安全区逐项检查，复制或跳转平台后台一键完成。</p>
-          </article>
+          <article class="card"><p class="card__no">01</p><h3>文案编译</h3><p>标题、配文、两条备选标题、正文、互动引导、话题，按平台规则一次生成。</p></article>
+          <article class="card"><p class="card__no">02</p><h3>封面工坊</h3><p>8 种版式、11 种字体、30 张素材，还能用 Seedream 直接生成配图。</p></article>
+          <article class="card"><p class="card__no">03</p><h3>发布前检查</h3><p>字数、话题、封面安全区逐项检查，复制或跳转平台后台一键完成。</p></article>
         </div>
       </section>
 
       <section class="models" id="models">
-        <p class="eyebrow">MODELS</p>
         <h2>接了什么，就写什么。</h2>
-        <p class="lead">不包装、不吹参数，这里就是实际接入的模型。</p>
+        <p class="lead">不包装参数，这里就是实际接入的模型。</p>
         <div class="model-list">
-          <div class="model">
-            <div><b>豆包 Seed 2.1 Lite</b><small>doubao-seed-2-1-lite-260915</small></div>
-            <span class="model__tag">文案 · 已接入</span>
-          </div>
-          <div class="model">
-            <div><b>Seedream 5.0 flash</b><small>doubao-seedream-5-0-flash-260915</small></div>
-            <span class="model__tag">配图 · 已接入</span>
-          </div>
-          <div class="model">
-            <div><b>豆包 Seed 2.1 Turbo / Pro</b><small>需在方舟控制台开通</small></div>
-            <span class="model__tag model__tag--muted">可选</span>
-          </div>
+          <div class="model"><div><b>豆包 Seed 2.1 Lite</b><small>doubao-seed-2-1-lite-260915</small></div><span class="model__tag">文案 · 已接入</span></div>
+          <div class="model"><div><b>Seedream 5.0 flash</b><small>doubao-seedream-5-0-flash-260915</small></div><span class="model__tag">配图 · 已接入</span></div>
+          <div class="model"><div><b>豆包 Seed 2.1 Turbo / Pro</b><small>需在火山方舟控制台开通</small></div><span class="model__tag model__tag--muted">可选</span></div>
         </div>
         <p class="note">Key 只保存在本机浏览器或本地服务，不上传、不进仓库。</p>
       </section>
 
       <section class="install" id="install">
-        <p class="eyebrow">RUN IT</p>
         <h2>本地跑，不怕哪天打不开。</h2>
         <ol class="install__steps">
           <li><b>准备</b><span>Node.js 22+，一个火山方舟 API Key</span></li>
-          <li><b>启动</b><span>双击「启动-豆包模式.bat」，浏览器自动打开 8099</span></li>
-          <li><b>接入</b><span>复制 Key 到本地文件，或粘贴到页面「接口」里</span></li>
+          <li><b>启动</b><span>双击「启动-豆包模式.bat」，自动打开 8099</span></li>
+          <li><b>接入</b><span>复制 Key 存到本地文件，或粘贴到页面「接口」</span></li>
         </ol>
         <div class="actions">
           <a class="btn btn--solid" href="./studio/">进入工作台</a>
