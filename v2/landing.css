@@ -771,3 +771,25 @@ body.app-open {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
+/* ===== Skill ===== */
+.skill {
+  padding: clamp(36px, 8vw, 76px) 0;
+  border-top: 1px solid var(--line);
+}
+
+.skill h2 {
+  margin: 0;
+  font-size: clamp(26px, 6.4vw, 46px);
+  font-weight: 800;
+  line-height: 1.14;
+}
+
+.skill .lead {
+  max-width: 34em;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: clamp(13.5px, 3.6vw, 16px);
+}
+
+.skill .how-list{margin-top:20px}
