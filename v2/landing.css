@@ -716,3 +716,58 @@ body.app-open {
   color: #fff;
   background: rgba(255, 255, 255, 0.12);
 }
+
+/* ===== 分享协作 ===== */
+.share {
+  padding: clamp(36px, 8vw, 76px) 0;
+  border-top: 1px solid var(--line);
+}
+
+.share h2 {
+  margin: 0;
+  font-size: clamp(26px, 6.4vw, 46px);
+  font-weight: 800;
+  line-height: 1.14;
+}
+
+.share .lead {
+  max-width: 34em;
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: clamp(13.5px, 3.6vw, 16px);
+}
+
+.share .shot-frame {
+  margin-top: 24px;
+}
+
+.share-points {
+  display: grid;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.share-points li {
+  padding: 14px 16px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.share-points b {
+  display: block;
+  font-size: 14px;
+}
+
+.share-points span {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 12.5px;
+}
+
+@media (min-width: 760px) {
+  .share-points {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
