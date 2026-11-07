@@ -3,8 +3,8 @@
   const shotCaption = document.getElementById('shot-caption');
   const shotButtons = document.querySelectorAll('.seg__btn[data-shot]');
   const shots = {
-    result: { src: './assets/app-result.png?v=4', caption: '编译结果 · 标题 / 配文 / 正文 / 话题，逐项可复制' },
-    studio: { src: './assets/app-studio.png?v=3', caption: '封面工坊 · 换图、套版式、调字体，一套带走' },
+    result: { src: './assets/shot-result.png', caption: '编译结果 · 标题 / 配文 / 正文 / 话题，逐项可复制' },
+    studio: { src: './assets/shot-studio.png', caption: '封面工坊 · 换图、套版式、调字体，一套带走' },
   };
 
   shotButtons.forEach((button) => {
