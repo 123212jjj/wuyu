@@ -24,7 +24,7 @@
         <a href="#models">模型</a>
         <a href="#install">安装</a>
       </nav>
-      <a class="nav__cta" href="./studio/">进入工作台</a>
+      <a class="nav__cta" href="./app/" data-open-app>进入工作台</a>
     </header>
 
     <main>
@@ -33,7 +33,7 @@
         <h1>一句话。<br /><em>编译成能发的。</em></h1>
         <p class="lead">把想法交给 AI，让一套内容直接落地。</p>
         <div class="actions">
-          <a class="btn btn--solid" href="./studio/">进入工作台</a>
+          <a class="btn btn--solid" href="./app/" data-open-app>进入工作台</a>
           <a class="btn btn--ghost" href="#interface">看它怎么编译</a>
         </div>
         <p class="meta">开源免费 · v2.0</p>
@@ -89,7 +89,7 @@
           <img id="shot-img" src="./assets/app-result.png" alt="文案结果页面" loading="lazy" />
           <figcaption>
             <span id="shot-caption">编译结果 · 标题 / 配文 / 正文 / 话题，逐项可复制</span>
-            <a class="shot__link" href="./studio/">去工作台试试 →</a>
+            <a class="shot__link" href="./app/" data-open-app>去工作台试试 →</a>
           </figcaption>
         </figure>
       </section>
@@ -203,7 +203,7 @@
           <li><b>接入</b><span>复制 Key 存到本地文件，或粘贴到页面「接口」</span></li>
         </ol>
         <div class="actions">
-          <a class="btn btn--solid" href="./studio/">进入工作台</a>
+          <a class="btn btn--solid" href="./app/" data-open-app>进入工作台</a>
           <a class="btn btn--ghost" href="https://github.com/123212jjj/wuyu" target="_blank" rel="noopener noreferrer">查看仓库</a>
         </div>
       </section>
@@ -213,6 +213,11 @@
       <span>文案编译器</span>
       <span>想法进来，成品出去。</span>
     </footer>
+
+    <div class="app-overlay" id="app-overlay" hidden>
+      <iframe id="app-frame" title="文案编译器工作台"></iframe>
+      <button type="button" class="app-overlay__close" id="app-close" aria-label="退出工作台">×</button>
+    </div>
 
     <script src="./landing.js"></script>
   </body>
