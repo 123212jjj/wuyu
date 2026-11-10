@@ -4,7 +4,9 @@
   const body = document.body;
   const portal = document.getElementById("portal");
   const track = document.getElementById("track");
-  const slides = Array.from(document.querySelectorAll(".slide"));
+  const slides = Array.from(document.querySelectorAll(".slide")).filter(
+    (slide) => !slide.classList.contains("slide--clone")
+  );
   const tabs = Array.from(document.querySelectorAll(".rail-tab"));
   const prevSlide = document.getElementById("prevSlide");
   const nextSlide = document.getElementById("nextSlide");
@@ -26,6 +28,28 @@
   let animationTimer = 0;
   let lastDragAt = 0;
   let lastDragDistance = 0;
+  let loop = null;
+  let loopTimer = 0;
+  let isLooping = false;
+
+  /* ------------------------------------------------------------------
+     Infinite loop stage
+     [clone of last] [slide 0] [slide 1] [slide 2] [clone of first]
+  ------------------------------------------------------------------ */
+  const makeClone = (slide) => {
+    const clone = slide.cloneNode(true);
+    clone.classList.add("slide--clone");
+    clone.classList.remove("is-active", "animate-in");
+    clone.querySelectorAll("[id]").forEach((element) => element.removeAttribute("id"));
+    clone.setAttribute("aria-hidden", "true");
+    clone.inert = true;
+    return clone;
+  };
+
+  const firstSlide = slides[0];
+  const lastSlide = slides[slides.length - 1];
+  track.insertBefore(makeClone(lastSlide), firstSlide);
+  track.appendChild(makeClone(firstSlide));
 
   const setTheme = (nextIndex) => {
     const slide = slides[nextIndex];
@@ -44,6 +68,15 @@
       ? "transform 0.96s cubic-bezier(0.22, 1, 0.36, 1)"
       : "none";
     track.style.transform = `translate3d(${offset.toFixed(2)}px, 0, 0)`;
+  };
+
+  const setLogicalPosition = (logicalIndex, animated) => {
+    setTransform(-(logicalIndex + 1) * width, animated);
+  };
+
+  const jumpToLogical = (logicalIndex) => {
+    track.style.transition = "none";
+    track.style.transform = `translate3d(${(-(logicalIndex + 1) * width).toFixed(2)}px, 0, 0)`;
   };
 
   const animateIn = () => {
@@ -80,8 +113,11 @@
     });
 
     if (railIndex) railIndex.textContent = pad(index + 1);
-    if (prevSlide) prevSlide.disabled = index === 0;
-    if (nextSlide) nextSlide.disabled = index === slides.length - 1;
+
+    // The carousel loops forever: previous from page 1 goes to page 3,
+    // next from page 3 returns to page 1.
+    if (prevSlide) prevSlide.disabled = false;
+    if (nextSlide) nextSlide.disabled = false;
 
     if (progress) {
       progress.style.width = `${((index + 1) / slides.length) * 100}%`;
@@ -98,9 +134,47 @@
     }
   };
 
+  const finishLoop = () => {
+    if (!loop) return;
+
+    const nextIndex = loop.nextIndex;
+    loop = null;
+    isLooping = false;
+    window.clearTimeout(loopTimer);
+    loopTimer = 0;
+
+    // The clone and the real slide look identical. Jump from the clone
+    // back to the real slide with no transition, so the loop is seamless.
+    jumpToLogical(nextIndex);
+  };
+
+  const startLoop = (nextIndex, direction) => {
+    index = nextIndex;
+    updateUI();
+    writeHash();
+
+    if (reduceMotion.matches) {
+      jumpToLogical(nextIndex);
+      return;
+    }
+
+    // Forward from page 3 goes to clone of page 1 at position 4.
+    // Backward from page 1 goes to clone of page 3 at position 0.
+    const targetPosition = direction > 0 ? slides.length + 1 : 0;
+
+    loop = { nextIndex };
+    isLooping = true;
+    setTransform(-targetPosition * width, true);
+
+    window.clearTimeout(loopTimer);
+    loopTimer = window.setTimeout(finishLoop, 1050);
+  };
+
   const goTo = (nextIndex, options = {}) => {
+    if (isLooping) return;
+
     const { animate = true, updateHash = true } = options;
-    const next = clamp(nextIndex, 0, slides.length - 1);
+    const next = ((nextIndex % slides.length) + slides.length) % slides.length;
 
     if (next === index) {
       if (animate) animateIn();
@@ -110,15 +184,24 @@
     index = next;
     width = portal.clientWidth || window.innerWidth;
     updateUI();
-    setTransform(-index * width, true);
+    setLogicalPosition(index, true);
 
     if (animate) animateIn();
     if (updateHash) writeHash();
   };
 
   const step = (direction) => {
-    const next = clamp(index + direction, 0, slides.length - 1);
-    if (next === index) return;
+    if (isLooping) return;
+
+    const next = (index + direction + slides.length) % slides.length;
+    const wrapsForward = direction > 0 && index === slides.length - 1;
+    const wrapsBackward = direction < 0 && index === 0;
+
+    if (wrapsForward || wrapsBackward) {
+      startLoop(next, direction);
+      return;
+    }
+
     goTo(next, { animate: true });
   };
 
@@ -131,13 +214,6 @@
   /* ------------------------------------------------------------------
      Pointer drag
   ------------------------------------------------------------------ */
-  const clampDragOffset = (delta) => {
-    if ((index === 0 && delta > 0) || (index === slides.length - 1 && delta < 0)) {
-      return delta * 0.26;
-    }
-    return delta;
-  };
-
   const finishDrag = (event, cancelled = false) => {
     if (!drag || event.pointerId !== drag.id) return;
 
@@ -158,21 +234,27 @@
 
     if (shouldMove) {
       const direction = delta < 0 ? 1 : -1;
-      const next = clamp(index + direction, 0, slides.length - 1);
+      const next = (index + direction + slides.length) % slides.length;
+      const wrapsForward = direction > 0 && index === slides.length - 1;
+      const wrapsBackward = direction < 0 && index === 0;
 
-      if (next !== index) {
-        index = next;
-        updateUI();
-        setTransform(-index * width, true);
-        writeHash();
+      if (wrapsForward || wrapsBackward) {
+        startLoop(next, direction);
         return;
       }
+
+      index = next;
+      updateUI();
+      setLogicalPosition(index, true);
+      writeHash();
+      return;
     }
 
-    setTransform(-index * width, true);
+    setLogicalPosition(index, true);
   };
 
   const onPointerDown = (event) => {
+    if (isLooping) return;
     if (event.pointerType === "mouse" && event.button !== 0) return;
     if (event.target.closest("a, button, [data-no-drag]")) return;
 
@@ -198,8 +280,8 @@
     if (!drag.moved && Math.abs(deltaX) < Math.abs(deltaY)) return;
     if (Math.abs(deltaX) > 6) drag.moved = true;
 
-    const offset = clampDragOffset(deltaX);
-    track.style.transform = `translate3d(${(-index * width + offset).toFixed(2)}px, 0, 0)`;
+    const offset = clamp(deltaX, -width * 1.04, width * 1.04);
+    track.style.transform = `translate3d(${(-(index + 1) * width + offset).toFixed(2)}px, 0, 0)`;
   };
 
   portal.addEventListener("pointerdown", onPointerDown, { passive: true });
@@ -258,6 +340,8 @@
      Navigation
   ------------------------------------------------------------------ */
   document.querySelectorAll("[data-goto]").forEach((element) => {
+    if (element.closest(".slide--clone")) return;
+
     element.addEventListener("click", (event) => {
       if (performance.now() - lastDragAt < 360 && lastDragDistance > 8) {
         event.preventDefault();
@@ -284,8 +368,9 @@
      Layout / boot
   ------------------------------------------------------------------ */
   const refreshLayout = () => {
+    if (isLooping) return;
     width = portal.clientWidth || window.innerWidth;
-    setTransform(-index * width, false);
+    jumpToLogical(index);
   };
 
   let resizeTimer = 0;
@@ -305,6 +390,6 @@
   index = initialFromHash();
   width = portal.clientWidth || window.innerWidth;
   updateUI();
-  setTransform(-index * width, false);
+  jumpToLogical(index);
   animateIn();
 })();

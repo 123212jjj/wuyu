@@ -1,4 +1,4 @@
-@font-face {
+﻿@font-face {
   font-family: "Shiju Serif";
   src: url("./assets/shiju-serif.woff2") format("woff2");
   font-weight: 400;
@@ -494,7 +494,7 @@ body[data-theme="light"] .head-status i {
 }
 
 /* ================================================================
-   SLIDE 01 · TEAM
+   SLIDE 01 路 TEAM
    ================================================================ */
 
 .slide--team {
@@ -815,7 +815,7 @@ body[data-theme="light"] .head-status i {
 }
 
 /* ================================================================
-   SLIDE 02 · COPY COMPILER
+   SLIDE 02 路 COPY COMPILER
    ================================================================ */
 
 .slide--copy {
@@ -1294,7 +1294,7 @@ body[data-theme="light"] .head-status i {
 }
 
 /* ================================================================
-   SLIDE 03 · PROMPT DESK
+   SLIDE 03 路 PROMPT DESK
    ================================================================ */
 
 .slide--prompt {
@@ -2579,3 +2579,8 @@ body[data-theme="light"] .rail-arrow:hover:not(:disabled) {
     transition: none !important;
   }
 }
+.slide--clone {
+  pointer-events: none;
+  user-select: none;
+}
+
