@@ -1,4 +1,4 @@
-﻿@font-face {
+@font-face {
   font-family: "Shiju Serif";
   src: url("./assets/shiju-serif.woff2") format("woff2");
   font-weight: 400;
@@ -53,8 +53,8 @@ body[data-slide="0"] {
 }
 
 body[data-slide="1"] {
-  --accent: #2f56ff;
-  --accent-rgb: 47, 86, 255;
+  --accent: #a9c6ff;
+  --accent-rgb: 169, 198, 255;
 }
 
 body[data-slide="2"] {
@@ -243,7 +243,7 @@ body[data-theme="light"] .site-head::before {
 }
 
 body[data-slide="1"] .brand__seal {
-  color: #fff;
+  color: #050608;
 }
 
 body[data-theme="light"] .brand__seal {
@@ -410,23 +410,23 @@ body[data-theme="light"] .head-status i {
 }
 
 .slide--copy .slide-label {
-  color: var(--paper-muted);
+  color: var(--faint);
 }
 
 .slide--copy .slide-label__main {
-  color: var(--paper-ink);
+  color: var(--ink);
 }
 
 .slide--copy .slide-label__sep {
-  color: rgba(21, 20, 15, 0.2);
+  color: rgba(255, 255, 255, 0.2);
 }
 
 .slide--copy .slide-label__en {
-  color: var(--paper-faint);
+  color: var(--faint);
 }
 
 .slide--copy .slide-label__no {
-  color: var(--copy-blue);
+  color: var(--blue);
 }
 
 /* Content animations */
@@ -819,8 +819,11 @@ body[data-theme="light"] .head-status i {
    ================================================================ */
 
 .slide--copy {
-  color: var(--paper-ink);
-  background: var(--paper);
+  color: var(--ink);
+  background:
+    radial-gradient(ellipse 62% 68% at 74% 38%, rgba(73, 107, 183, 0.2), transparent 66%),
+    radial-gradient(ellipse 42% 54% at 16% 78%, rgba(190, 128, 81, 0.08), transparent 64%),
+    #06070b;
 }
 
 .copy-bg {
@@ -835,8 +838,8 @@ body[data-theme="light"] .head-status i {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(to right, rgba(21, 20, 15, 0.055) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(21, 20, 15, 0.032) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
   background-size: calc(100% / 6) 100%, 100% 110px;
   mask-image: radial-gradient(ellipse 80% 80% at 50% 45%, #000 5%, transparent 85%);
   -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 45%, #000 5%, transparent 85%);
@@ -849,8 +852,8 @@ body[data-theme="light"] .head-status i {
   width: min(55vw, 740px);
   height: min(55vw, 740px);
   background:
-    radial-gradient(ellipse at 52% 46%, rgba(47, 86, 255, 0.14), transparent 60%),
-    radial-gradient(ellipse at 68% 62%, rgba(232, 155, 104, 0.13), transparent 54%);
+    radial-gradient(ellipse at 52% 46%, rgba(92, 132, 214, 0.22), transparent 60%),
+    radial-gradient(ellipse at 68% 62%, rgba(220, 152, 102, 0.1), transparent 54%);
   filter: blur(24px);
 }
 
@@ -860,7 +863,7 @@ body[data-theme="light"] .head-status i {
   right: -14%;
   width: min(62vw, 820px);
   aspect-ratio: 1;
-  border: 1px solid rgba(47, 86, 255, 0.1);
+  border: 1px solid rgba(169, 198, 255, 0.1);
   border-radius: 50%;
 }
 
@@ -963,20 +966,20 @@ body[data-theme="light"] .head-status i {
 }
 
 .slide--copy .product-kicker {
-  color: var(--paper-muted);
+  color: rgba(244, 246, 250, 0.4);
 }
 
 .slide--copy .product-title em {
-  color: var(--copy-blue);
+  color: #a9c6ff;
 }
 
 .slide--copy .product-desc {
-  color: var(--paper-muted);
+  color: rgba(244, 246, 250, 0.56);
 }
 
 .slide--copy .product-tags li {
-  color: var(--paper-muted);
-  border-color: var(--paper-line);
+  color: rgba(244, 246, 250, 0.52);
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 .slide--prompt .product-kicker {
@@ -1082,6 +1085,33 @@ body[data-theme="light"] .head-status i {
   transform: rotate(8deg);
 }
 
+.slide--copy .platform-card {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.slide--copy .platform-card::after {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.09), transparent 45%);
+}
+
+.slide--copy .platform-card--wx {
+  color: #dce8ff;
+  background:
+    linear-gradient(155deg, rgba(96, 137, 222, 0.22), rgba(255, 255, 255, 0.025)),
+    #0a101d;
+  border-color: rgba(169, 198, 255, 0.24);
+}
+
+.slide--copy .platform-card--dy {
+  color: #f7e3cc;
+  background:
+    linear-gradient(155deg, rgba(211, 146, 93, 0.18), rgba(255, 255, 255, 0.025)),
+    #110d0a;
+  border-color: rgba(239, 196, 156, 0.22);
+}
+
 .platform-card__tag {
   position: relative;
   z-index: 1;
@@ -1136,9 +1166,9 @@ body[data-theme="light"] .head-status i {
   overflow: hidden;
   color: #f4f0e8;
   background: #0b0e14;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.11);
   border-radius: 12px;
-  box-shadow: 0 38px 80px rgba(22, 20, 15, 0.32);
+  box-shadow: 0 38px 90px rgba(0, 0, 0, 0.52), 0 0 0 1px rgba(169, 198, 255, 0.04);
   transform: rotate(-2.2deg);
 }
 
@@ -1263,14 +1293,14 @@ body[data-theme="light"] .head-status i {
   position: absolute;
   z-index: 4;
   padding: 6px 10px;
-  color: rgba(21, 20, 15, 0.62);
+  color: rgba(244, 246, 250, 0.66);
   font-family: var(--sans);
   font-size: 8px;
   letter-spacing: 0.06em;
-  background: rgba(255, 253, 248, 0.86);
-  border: 1px solid rgba(21, 20, 15, 0.1);
+  background: rgba(9, 12, 19, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 999px;
-  box-shadow: 0 10px 24px rgba(22, 20, 15, 0.12);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
