@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#050608" />
     <meta name="color-scheme" content="dark" />
     <meta name="format-detection" content="telephone=no,email=no,address=no" />
-    <meta name="description" content="文案编译器：把一句想法编译成小红书、公众号、抖音、B站能直接发布的成套内容，含封面工坊与发布前检查。接入豆包 Seed 2.1 与 Seedream 5.0。" />
+    <meta name="description" content="文案编译器：装进你常用的 AI，一句话唤起编译器弹窗，把想法编译成小红书、公众号、抖音、B站能直接发布的成套内容，含封面工坊与发布前检查。" />
     <title>文案编译器</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23080a10'/%3E%3Ctext x='32' y='44' font-size='32' text-anchor='middle' fill='%23a9c6ff' font-family='sans-serif' font-weight='700'%3E%E7%BC%96%3C/text%3E%3C/svg%3E" />
     <link rel="stylesheet" href="./landing.css" />
@@ -22,12 +22,11 @@
         <a href="#proof">对比</a>
         <a href="#share">协作</a>
         <a href="#how">操作</a>
-        <a href="#skill">Skill</a>
-        <a href="#models">模型</a>
-        <a href="#install">安装</a>
-        <a href="./login/">登录</a>
+        <a href="#skill">安装 Skill</a>
+        <a href="#install">唤醒</a>
+        <a href="#issues">限制</a>
       </nav>
-      <a class="nav__cta" href="./app/" data-open-app>进入工作台</a>
+      <a class="nav__cta" href="./成品工作台.md" download>下载 Skill</a>
     </header>
 
     <main>
@@ -36,11 +35,10 @@
         <h1>一句话。<br /><em>编译成能发的。</em></h1>
         <p class="lead">把想法交给 AI，让一套内容直接落地。</p>
         <div class="actions">
-          <a class="btn btn--solid" href="./app/" data-open-app>进入工作台</a>
+          <a class="btn btn--solid" href="./成品工作台.md" download>下载 Skill（成品工作台.md）</a>
           <a class="btn btn--ghost" href="#interface">看它怎么编译</a>
         </div>
-        <p class="meta">开源免费 · v2.0</p>
-        <p class="meta meta--models">豆包 Seed 2.1 Lite · Seedream 5.0 flash · Seed 2.1 Turbo</p>
+        <p class="meta">开源免费 · v2.0 · 装进你常用的大模型，不需要 API Key</p>
 
         <div class="showcase">
           <article class="float float--xhs"><img class="ico" src="./assets/icons/xhs.png" alt="小红书" /><div><b>小红书笔记</b><small>标题 · 正文 · 话题</small></div></article>
@@ -74,7 +72,7 @@
 
         <div class="shot-frame">
           <div class="shot-frame__bar"><span></span><span></span><span></span><em>真实工作台 · 写一句交代</em></div>
-          <img src="./assets/shot-editor.png" alt="文案编译器创作台界面" loading="lazy" />
+          <img src="./assets/shot-editor.png" alt="文案编译器创作台界面" />
         </div>
       </section>
 
@@ -89,10 +87,10 @@
         </div>
 
         <figure class="shot">
-          <img id="shot-img" src="./assets/shot-result.png" alt="文案结果页面" loading="lazy" />
+          <img id="shot-img" src="./assets/shot-result.png" alt="文案结果页面" />
           <figcaption>
             <span id="shot-caption">编译结果 · 标题 / 配文 / 正文 / 话题，逐项可复制</span>
-            <a class="shot__link" href="./app/" data-open-app>去工作台试试 →</a>
+            <a class="shot__link" href="#skill">看怎么装成 Skill →</a>
           </figcaption>
         </figure>
       </section>
@@ -202,7 +200,7 @@
         <h2>一套内容，不是一段文字。</h2>
         <div class="cards">
           <article class="card"><p class="card__no">01</p><h3>文案编译</h3><p>标题、配文、两条备选标题、正文、互动引导、话题，按平台规则一次生成。</p></article>
-          <article class="card"><p class="card__no">02</p><h3>封面工坊</h3><p>8 种版式、11 种字体、30 张素材，还能用 Seedream 直接生成配图。</p></article>
+          <article class="card"><p class="card__no">02</p><h3>封面工坊</h3><p>8 种版式、11 种字体、30 张素材，上传照片或从素材里挑一张。</p></article>
           <article class="card"><p class="card__no">03</p><h3>发布前检查</h3><p>字数、话题、封面安全区逐项检查，复制或跳转平台后台一键完成。</p></article>
         </div>
       </section>
@@ -214,7 +212,7 @@
 
         <div class="shot-frame">
           <div class="shot-frame__bar"><span></span><span></span><span></span><em>真实工作台 · 分享协作</em></div>
-          <img src="./assets/shot-share.png" alt="分享协作页面：成员、角色与协作链接" loading="lazy" />
+          <img src="./assets/shot-share.png" alt="分享协作页面：成员、角色与协作链接" />
         </div>
 
         <ul class="share-points">
@@ -230,10 +228,10 @@
         <ol class="how-list">
           <li><b>① 写一句交代</b><span>产品 / 人群 / 语气，写清这三点就够了。越具体越贴。</span></li>
           <li><b>② 选平台和语气</b><span>顶部选小红书 / 公众号 / 抖音 / B站，再挑一个语气方向。</span></li>
-          <li><b>③ 点「编译」</b><span>等 5–10 秒，标题、配文、备选标题、正文、互动引导、封面文案、话题一次给全。</span></li>
+          <li><b>③ 点「生成」</b><span>当前大模型写完，自动跳到结果页：标题、配文、备选标题、正文、互动引导、封面文案、话题一次给全。</span></li>
           <li><b>④ 复制或发布</b><span>结果页可逐项复制，也能去封面工坊换图、调字体、套版式，再到发布中心。</span></li>
         </ol>
-        <p class="note">首次使用需要填一个火山方舟 API Key（Key 只存本机，不经过任何服务器）。</p>
+        <p class="note">这些都在 Skill 弹窗里完成，用的是你当前的大模型。第一次使用前，按上面「安装 Skill」把它装好。</p>
       </section>
 
       <!-- ===== 已知问题 ===== -->
@@ -241,55 +239,63 @@
         <h2>现在的问题，也写清楚。</h2>
         <p class="lead">这一版自己完整跑过一遍，下面是真实存在的限制，不藏着。</p>
         <ul class="issue-list">
-          <li><b>线上需要自己填 Key</b><span>GitHub Pages 是纯静态，不能内置 Key；本地启动服务则自动读取。</span></li>
-          <li><b>登录是本机演示</b><span>账号只存在浏览器，换设备不会同步，也没有找回密码。</span></li>
-          <li><b>生成的图片链接约 24 小时过期</b><span>长期使用要先把图下载下来。</span></li>
-          </ul>
+          <li><b>需要能执行本地命令的 AI</b><span>普通网页聊天装不了本地服务；请用支持文件读写与命令的 Agent（DeepSeek Harness / Codex / Claude 等）。</span></li>
+          <li><b>弹窗只在本机打开</b><span>127.0.0.1 的链接不能发给别人，这是设计，不是故障。</span></li>
+          <li><b>生成要在 90 秒内写完</b><span>点「生成」后由你当前的大模型写文案；超时就再点一次。</span></li>
+          <li><b>登录仍是本机演示</b><span>账号只存在浏览器，换设备不会同步，也没有找回密码。</span></li>
+        </ul>
       </section>
 
       <!-- ===== 模型 ===== -->
       <section class="models" id="models">
-        <h2>接了什么，就写什么。</h2>
-        <p class="lead">不包装参数，这里就是实际接入的模型。</p>
+        <h2>不用再填 Key。</h2>
+        <p class="lead">文案由你当前使用的大模型生成。编译器只负责界面、平台规则、封面和导出，不再单独接一家模型。</p>
         <div class="model-list">
-          <div class="model"><div><b>豆包 Seed 2.1 Lite</b><small>doubao-seed-2-1-lite-260915</small></div><span class="model__tag">文案 · 已接入</span></div>
-          <div class="model"><div><b>Seedream 5.0 flash</b><small>doubao-seedream-5-0-flash-260915</small></div><span class="model__tag">配图 · 已接入</span></div>
-          <div class="model"><div><b>豆包 Seed 2.1 Turbo / Pro</b><small>需在火山方舟控制台开通</small></div><span class="model__tag model__tag--muted">可选</span></div>
+          <div class="model"><div><b>你的大模型</b><small>DeepSeek Harness / Codex / Claude 等</small></div><span class="model__tag">写文案</span></div>
+          <div class="model"><div><b>文案编译器</b><small>本地 Skill 弹窗 · 原界面不变</small></div><span class="model__tag">平台规则 · 封面 · 导出</span></div>
         </div>
-        <p class="note">Key 只保存在本机浏览器或本地服务，不上传、不进仓库。</p>
+        <p class="note">没有 API Key，没有额度，也没有第三方账号授权。</p>
       </section>
 
-      <!-- ===== 安装 ===== -->
-      <!-- ===== Skill ===== -->
+      <!-- ===== Skill 安装 ===== -->
       <section class="skill" id="skill">
-        <h2>装成 Skill，<br />一句话唤起。</h2>
-        <p class="lead">下载一个 MD 文件放进你的 AI 客户端。下次只要说「用文案编译器写文案」，就会自动打开这个工作台界面。</p>
+        <h2>装进你的大模型，<br />一句话就打开。</h2>
+        <p class="lead">功能没变，只是从「打开一个网页」变成「在对话里弹出一个编译器」。下载一个 Markdown，拖进对话，让 AI 装好；以后说一句话就能唤醒。</p>
 
         <div class="actions">
-          <a class="btn btn--solid" href="./skill/SKILL.md" download="SKILL.md">下载 Skill（MD）</a>
-          <a class="btn btn--ghost" href="#install">看本地安装</a>
+          <a class="btn btn--solid" href="./成品工作台.md" download>下载 Skill（成品工作台.md）</a>
+          <a class="btn btn--ghost" href="#install">看安装与唤醒</a>
         </div>
 
         <ol class="how-list">
-          <li><b>① 下载 SKILL.md</b><span>点上面的按钮，得到一个 Markdown 文件</span></li>
-          <li><b>② 放进 Skills 目录</b><span>Claude / DSH 等客户端放到 skills/ 下；或直接拖进对话让 AI 记住</span></li>
-          <li><b>③ 说一句话调用</b><span>「用文案编译器，写一篇小红书的咖啡文案」→ 自动打开工作台</span></li>
-          <li><b>④ 在工作台里生成</b><span>写一句交代、选平台语气、点编译，成套内容出来</span></li>
+          <li><b>① 下载</b><span>得到一个 <code>成品工作台.md</code>，里面就是编译器界面、本地服务和安装说明。</span></li>
+          <li><b>② 拖进对话</b><span>把文件拖进支持本地文件与命令的 AI，说：「安装这个文案编译器 Skill，按文件开头的说明装到本机。」</span></li>
+          <li><b>③ 等它装完</b><span>AI 会还原文件、安装依赖、注册工具和 Skill；装好后它会告诉你「装好了」。</span></li>
+          <li><b>④ 说一句唤醒</b><span>「使用文案编译器，写一篇小红书咖啡文案。」→ 编译器弹窗打开，界面和原来一样。</span></li>
         </ol>
 
-        <p class="note">触发词：文案编译器 / 编译文案 / 写小红书文案 / 写公众号长文 / 写抖音口播 / 写B站脚本</p>
+        <div class="say-list">
+          <p class="say-list__title">装好以后，可以直接说：</p>
+          <blockquote>使用文案编译器，写一篇小红书咖啡文案。</blockquote>
+          <blockquote>打开文案编译台。</blockquote>
+          <blockquote>用文案编译器写一篇公众号长文。</blockquote>
+          <blockquote>用文案编译器，把这段想法编译成四平台文案。</blockquote>
+        </div>
+
+        <p class="note">触发词：文案编译器 / 文案编译台 / 编译文案 / 写小红书文案 / 写公众号长文 / 写抖音口播 / 写 B站脚本。弹窗里照旧写一句交代、选平台和语气、点生成。</p>
       </section>
 
       <section class="install" id="install">
-        <h2>本地跑，不怕哪天打不开。</h2>
+        <h2>安装三步，<br />之后都在弹窗里。</h2>
         <ol class="install__steps">
-          <li><b>准备</b><span>Node.js 22+，一个火山方舟 API Key</span></li>
-          <li><b>启动</b><span>双击「启动-豆包模式.bat」，自动打开 8099</span></li>
-          <li><b>接入</b><span>复制 Key 存到本地文件，或粘贴到页面「接口」</span></li>
+          <li><b>准备</b><span>一个能读写本地文件、执行命令的 AI；Node.js 22.13+。只聊天不执行命令的网页不行。</span></li>
+          <li><b>安装</b><span>下载 <code>成品工作台.md</code> → 拖进对话 → 说：「安装这个文案编译器 Skill，按文件开头的说明装到本机。」</span></li>
+          <li><b>唤醒</b><span>说：「使用文案编译器，写一篇小红书咖啡文案。」→ 弹窗打开后，写一句交代、点生成。</span></li>
         </ol>
+        <p class="note">第一次安装需要几分钟；之后每次只开一个弹窗，不用再打开网页，也不用回聊天输入“继续”。</p>
         <div class="actions">
-          <a class="btn btn--solid" href="./app/" data-open-app>进入工作台</a>
-          <a class="btn btn--ghost" href="https://github.com/123212jjj/wuyu" target="_blank" rel="noopener noreferrer">查看仓库</a>
+          <a class="btn btn--solid" href="./成品工作台.md" download>下载 Skill</a>
+          <a class="btn btn--ghost" href="#how">看弹窗里怎么操作</a>
         </div>
       </section>
     </main>
@@ -299,11 +305,8 @@
       <span>想法进来，成品出去。</span>
     </footer>
 
-    <div class="app-overlay" id="app-overlay" hidden>
-      <iframe id="app-frame" title="文案编译器工作台"></iframe>
-      <button type="button" class="app-overlay__close" id="app-close" aria-label="退出工作台">×</button>
-    </div>
-
     <script src="./landing.js"></script>
   </body>
 </html>
+
+

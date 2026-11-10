@@ -62,38 +62,3 @@
 
   render();
 })();
-
-// ===== 工作台内嵌：一个网址里切换 =====
-(() => {
-  const overlay = document.getElementById('app-overlay');
-  const frame = document.getElementById('app-frame');
-  const closeBtn = document.getElementById('app-close');
-  if (!overlay || !frame) return;
-
-  const openApp = () => {
-    frame.src = './app/';
-    overlay.hidden = false;
-    document.body.classList.add('app-open');
-  };
-
-  const closeApp = () => {
-    overlay.hidden = true;
-    document.body.classList.remove('app-open');
-    frame.src = 'about:blank';
-  };
-
-  document.querySelectorAll('[data-open-app]').forEach((link) => {
-    link.addEventListener('click', (event) => {
-      event.preventDefault();
-      openApp();
-    });
-  });
-
-  closeBtn?.addEventListener('click', closeApp);
-  window.addEventListener('message', (event) => {
-    if (event.data && event.data.type === 'wenan:exit-app') closeApp();
-  });
-  window.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && !overlay.hidden) closeApp();
-  });
-})();

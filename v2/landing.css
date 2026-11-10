@@ -793,3 +793,10 @@ body.app-open {
 }
 
 .skill .how-list{margin-top:20px}
+code { padding: 1px 6px; font-family: "SFMono-Regular", Consolas, monospace; font-size: .9em; color: #a9c6ff; background: rgba(169,198,255,.12); border-radius: 5px; }
+.say-list { margin: 34px 0 0; padding: 22px 24px; border: 1px solid rgba(255,255,255,.14); border-radius: 16px; background: rgba(255,255,255,.035); }
+.say-list__title { margin: 0 0 12px; color: var(--muted); font-size: 12px; letter-spacing: .08em; }
+.say-list blockquote { margin: 0; padding: 10px 0; color: var(--ink); font-size: clamp(15px, 3.6vw, 18px); line-height: 1.7; border-top: 1px dashed rgba(255,255,255,.12); }
+.say-list blockquote:first-of-type { border-top: 0; }
+.say-list blockquote::before { content: "“"; color: var(--accent, #a9c6ff); }
+.say-list blockquote::after { content: "”"; color: var(--accent, #a9c6ff); }
