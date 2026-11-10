@@ -1,0 +1,313 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#050608" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="format-detection" content="telephone=no,email=no,address=no" />
+    <meta name="description" content="文案编译器：装进你常用的 AI，一句话唤起编译器弹窗，把想法编译成小红书、公众号、抖音、B站能直接发布的成套内容，含封面工坊与发布前检查。" />
+    <title>文案编译器</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23080a10'/%3E%3Ctext x='32' y='44' font-size='32' text-anchor='middle' fill='%23a9c6ff' font-family='sans-serif' font-weight='700'%3E%E7%BC%96%3C/text%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./landing.css" />
+  </head>
+  <body>
+    <header class="nav">
+      <a class="nav__brand" href="./">
+        <span class="nav__seal">编</span>
+        <span class="nav__name">文案编译器</span>
+      </a>
+      <nav class="nav__links">
+        <a href="#interface">界面</a>
+        <a href="#proof">对比</a>
+        <a href="#share">协作</a>
+        <a href="#how">操作</a>
+        <a href="#skill">安装 Skill</a>
+        <a href="#install">唤醒</a>
+        <a href="#issues">限制</a>
+      </nav>
+      <a class="nav__cta" href="./成品工作台.md" download>下载 Skill</a>
+    </header>
+
+    <main>
+      <!-- ===== Hero ===== -->
+      <section class="hero">
+        <h1>一句话。<br /><em>编译成能发的。</em></h1>
+        <p class="lead">下载一个 Skill，装进你常用的大模型。要用的时候说一句话，编译器才以弹窗出现——不是再打开一个网页。</p>
+        <div class="actions">
+          <a class="btn btn--solid" href="./成品工作台.md" download>下载 Skill（成品工作台.md）</a>
+          <a class="btn btn--ghost" href="#interface">看它怎么编译</a>
+        </div>
+        <p class="meta">开源免费 · v2.0 · Skill 弹窗 · 不需要 API Key</p>
+
+        <div class="showcase">
+          <article class="float float--xhs"><img class="ico" src="./assets/icons/xhs.png" alt="小红书" /><div><b>小红书笔记</b><small>标题 · 正文 · 话题</small></div></article>
+          <article class="float float--wx"><img class="ico" src="./assets/icons/wx.png" alt="微信" /><div><b>公众号长文</b><small>配文 · 分段 · 排版</small></div></article>
+          <article class="float float--dy"><img class="ico" src="./assets/icons/dy.png" alt="抖音" /><div><b>抖音分镜</b><small>0-3s · 口播稿</small></div></article>
+          <article class="float float--bili"><img class="ico" src="./assets/icons/bili.png" alt="B站" /><div><b>B站脚本</b><small>开场 · 结构 · 收尾</small></div></article>
+
+          <div class="result" aria-label="编译结果预览">
+            <p class="result__label">编译结果 · 小红书</p>
+            <h3>下午的咖啡，配满屏简约大字母</h3>
+            <p class="result__dek">用一杯咖啡，接住整个下午的松弛感。</p>
+            <p class="result__body">光落在杯垫上的时候，连待办都慢了下来。没有花哨的摆件，只有黑白字母和浅棕的咖啡液。</p>
+            <div class="result__tags"><span>#咖啡日常</span><span>#简约生活</span><span>#下午时光</span></div>
+            <div class="result__foot"><span>正在检查：字数 / 话题 / 安全区</span><i>98%</i></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 想法逐步成型 ===== -->
+      <section class="band" id="interface">
+        <h2>想法，逐步成型。</h2>
+        <p class="band__sub">把想法放进来。</p>
+        <p class="lead">一句交代就够：写清产品、人群、语气。AI 先拆骨架，再适配平台，最后把标题、正文、封面、话题一起编译出来。</p>
+
+        <ol class="steps">
+          <li class="is-on">写一句交代</li>
+          <li>确认平台与语气</li>
+          <li>编译成套内容</li>
+          <li>检查并发布</li>
+        </ol>
+
+        <div class="shot-frame">
+          <div class="shot-frame__bar"><span></span><span></span><span></span><em>真实工作台 · 写一句交代</em></div>
+          <img src="./assets/shot-editor.png" alt="文案编译器创作台界面" />
+        </div>
+      </section>
+
+      <!-- ===== 从想法到成品（切换） ===== -->
+      <section class="tabs" id="workflow">
+        <h2>从想法，到能带走的东西。</h2>
+        <p class="lead">编译完成后直接复制，或下载成文件带走。</p>
+
+        <div class="seg" role="tablist" aria-label="切换界面截图">
+          <button type="button" class="seg__btn is-on" data-shot="result" role="tab" aria-selected="true">编译文案</button>
+          <button type="button" class="seg__btn" data-shot="studio" role="tab" aria-selected="false">带走成品</button>
+        </div>
+
+        <figure class="shot">
+          <img id="shot-img" src="./assets/shot-result.png" alt="文案结果页面" />
+          <figcaption>
+            <span id="shot-caption">编译结果 · 标题 / 配文 / 正文 / 话题，逐项可复制</span>
+            <a class="shot__link" href="#skill">看怎么装成 Skill →</a>
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- ===== 大字号宣言 ===== -->
+      <section class="statement">
+        <p>你的想法。你的 AI。</p>
+        <h2>少一点来回折腾，<br />多一点完成的感觉。</h2>
+      </section>
+
+      <!-- ===== 明暗对比：好不好，让文案说话 ===== -->
+      <section class="proof light" id="proof">
+        <h2>好不好，<br />让文案说话。</h2>
+        <p class="lead">同一句交代，同一件事。左边是编译台，右边是随手一写。</p>
+
+        <div class="seg seg--dark" role="tablist" aria-label="对比切换">
+          <button type="button" class="seg__btn is-on" data-compare="on" role="tab" aria-selected="true">用文案编译器</button>
+          <button type="button" class="seg__btn" data-compare="off" role="tab" aria-selected="false">不用编译台</button>
+        </div>
+
+        <div class="examples" id="examples">
+          <article class="example is-on" data-kind="on">
+            <p class="example__brief">例子 01 · 交代：咖啡，简约，日漫风格，下午的松弛感</p>
+            <h3>下午的咖啡，配满屏简约大字母</h3>
+            <p class="example__dek">用一杯咖啡，接住整个下午的松弛感。</p>
+            <p>下午三点，阳光刚好斜斜落进窗台，空气里能看见细小的浮尘。我把冰咖啡从冰箱拿出来，杯壁立刻浮起一层薄薄的水雾，像日漫里被故意放慢的那半帧画面。</p>
+            <p>没有复杂的构图，也没有刻意摆盘。一张浅色木桌、一只透明玻璃杯、几颗还没化开的冰，加上窗边随手摊开的书，就是这个下午最舒服的布景，连桌角的光斑都像提前设计好的。</p>
+            <p>入口先是清爽的酸，紧接着一点点回甘慢慢往上走。喝到一半的时候，风把窗帘吹得轻轻晃，光斑也跟着在桌面上挪位置，时间像是被谁悄悄调慢了一档，原本急着处理的事也忽然不那么重要了。</p>
+            <p>原来松弛感不用刻意去找。不用出门、不用打卡、不用发朋友圈证明自己在休息，只要一杯冰咖啡、一个没人打扰的下午，就够把这一周攒下来的疲惫慢慢化开。</p>
+            <div class="example__tags"><span>#咖啡日常</span><span>#简约生活</span><span>#日漫风</span><span>#下午时光</span><span>#松弛感</span><span>#窗边咖啡</span></div>
+            <p class="example__hook">评论区聊聊：你下午喝咖啡时最爱发什么呆？</p>
+          </article>
+
+          <article class="example" data-kind="on">
+            <p class="example__brief">例子 02 · 交代：护肤新品，平价，学生党，别太夸张</p>
+            <h3>平价补水，先别急着买贵的</h3>
+            <p class="example__dek">几十块的补水，够撑过换季的干。</p>
+            <p>换季那两周，脸绷得像被风抽过，笑一下都觉得紧。本来想跟风入大牌，最后还是先拿这瓶平价水乳试了试，想着不行就当代价不大的学费。</p>
+            <p>老老实实用了一整周才敢说：上脸不刺痛，也不搓泥，早上化妆前拍两层，底妆反而更服帖。成分表很干净，没有把“抗老”“焕亮”这些大字写在包装上，闻起来也没什么香精味。</p>
+            <p>学生党预算有限，与其分期买一瓶可能用不完的精华，不如把最基础的保湿做扎实。皮肤状态稳了，再去谈其他功效，才不算浪费钱。</p>
+            <p>当然它也不是万能的，痘印、细纹该没有还是没有。但如果你只是换季干、起皮、上妆卡粉，先把补水这一步补上，比什么都实在，也比盲目堆产品更省钱。早晚各一次，一瓶能用两个多月，算下来一天不到两块钱，比一杯奶茶还便宜。</p>
+            <div class="example__tags"><span>#平价护肤</span><span>#学生党</span><span>#换季保湿</span><span>#空瓶记</span><span>#基础护肤</span><span>#省钱攻略</span></div>
+            <p class="example__hook">评论区聊聊：你们换季最离不开哪一步？</p>
+          </article>
+
+          <article class="example" data-kind="on">
+            <p class="example__brief">例子 03 · 交代：独立书店，周末活动，想写得温柔一点</p>
+            <h3>周末的书店，灯亮得比平时久一点</h3>
+            <p class="example__dek">把两小时交给一本书，也交给自己。</p>
+            <p>周六晚上七点，城市的声音慢慢降下来，二层的灯还亮着。靠窗的位置是特意留的，桌上摆着一盏小台灯、一杯温水，还有一沓随手可以取用的便签纸。</p>
+            <p>不用报名，不用签到，也没有指定的必读书目。带一本读到一半的书来，从哪一页翻开都行。有人读小说，有人翻画册，也有人只是坐着发呆，把手机调成静音，放进包里。</p>
+            <p>没有讲座，没有打卡任务，没有人催着你分享读后感。想说话的时候，隔壁桌的人会接上一句；不想说话的时候，就安静地待着，谁也不会觉得奇怪，热水没了自己去倒。</p>
+            <p>两个小时过去，书可能只翻了几页，但心里那根一直绷着的弦悄悄松了。原来周末也可以不赶场子、不追进度，把时间交给一本书，也交给自己。离开的时候不用打招呼，把水杯放回架子上就好，下次还会想来。</p>
+            <div class="example__tags"><span>#独立书店</span><span>#周末去哪儿</span><span>#读书会</span><span>#城市漫游</span><span>#安静时光</span><span>#线下活动</span></div>
+            <p class="example__hook">评论区聊聊：你上一次完整读完一本书是什么时候？</p>
+          </article>
+
+          <article class="example example--raw" data-kind="off">
+            <p class="example__brief">不用编译台的版本 · 同一句交代</p>
+            <h3>好喝又好看的咖啡推荐</h3>
+            <p>今天下午喝了一杯咖啡，真的很好喝，颜色也很好看，简约风很大气，喜欢的朋友可以试试，喝完心情很好，推荐给大家！</p>
+            <p class="example__bad">问题：没有标题结构、没有配文、没有话题、没有互动引导，平台适配为零。</p>
+          </article>
+        </div>
+
+        <div class="pager">
+          <button type="button" class="pager__btn" id="prev" aria-label="上一个例子">←</button>
+          <span id="pager-label">第 1 / 3 例</span>
+          <button type="button" class="pager__btn" id="next" aria-label="下一个例子">→</button>
+        </div>
+      </section>
+
+      <!-- ===== 四端能力 ===== -->
+      <section class="outputs">
+        <h2>一次编译，四端可用。</h2>
+        <p class="lead">不是一段通用文案，而是按每个平台重新写过的一套。</p>
+        <div class="output-grid">
+          <article class="output">
+            <img class="ico" src="./assets/icons/xhs.png" alt="" />
+            <h3>小红书</h3>
+            <p>6 图笔记 · 短句分段 · 5-6 个话题</p>
+            <ul><li>标题 ≤20 字</li><li>正文 3-5 段</li><li>互动引导</li></ul>
+          </article>
+          <article class="output">
+            <img class="ico" src="./assets/icons/wx.png" alt="" />
+            <h3>公众号</h3>
+            <p>长文 · 摘要 · 小标题节奏</p>
+            <ul><li>标题 ≤64 字</li><li>正文 3-6 段</li><li>可直接排版</li></ul>
+          </article>
+          <article class="output">
+            <img class="ico" src="./assets/icons/dy.png" alt="" />
+            <h3>抖音</h3>
+            <p>分镜口播 · 时间码 · 前 3 秒钩子</p>
+            <ul><li>0-3s 抓人</li><li>3-4 段分镜</li><li>口播语气</li></ul>
+          </article>
+          <article class="output">
+            <img class="ico" src="./assets/icons/bili.png" alt="" />
+            <h3>B站</h3>
+            <p>脚本结构 · 开场 · 信息密度</p>
+            <ul><li>开场 1 句</li><li>2-4 段结构</li><li>结尾引导</li></ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== 核心能力 ===== -->
+      <section class="features">
+        <h2>一套内容，不是一段文字。</h2>
+        <div class="cards">
+          <article class="card"><p class="card__no">01</p><h3>文案编译</h3><p>标题、配文、两条备选标题、正文、互动引导、话题，按平台规则一次生成。</p></article>
+          <article class="card"><p class="card__no">02</p><h3>封面工坊</h3><p>8 种版式、11 种字体、30 张素材，上传照片或从素材里挑一张。</p></article>
+          <article class="card"><p class="card__no">03</p><h3>发布前检查</h3><p>字数、话题、封面安全区逐项检查，复制或跳转平台后台一键完成。</p></article>
+        </div>
+      </section>
+
+      <!-- ===== 分享协作 ===== -->
+      <section class="share" id="share">
+        <h2>一个人写，<br />几个人一起盯。</h2>
+        <p class="lead">一条协作链接，把编辑、客户、搭档拉进同一篇稿子。链接 7 天有效，权限可以按人设置成可编辑或只读。</p>
+
+        <div class="shot-frame">
+          <div class="shot-frame__bar"><span></span><span></span><span></span><em>真实工作台 · 分享协作</em></div>
+          <img src="./assets/shot-share.png" alt="分享协作页面：成员、角色与协作链接" />
+        </div>
+
+        <ul class="share-points">
+          <li><b>协作链接</b><span>7 天有效，发出去就能打开当前草稿，不会误发布</span></li>
+          <li><b>邮箱邀请</b><span>按邮箱把人拉进来，成员和角色一目了然</span></li>
+          <li><b>权限分层</b><span>可编辑 / 可评论 / 仅查看，改稿不乱套</span></li>
+        </ul>
+      </section>
+
+      <!-- ===== 怎么操作 ===== -->
+      <section class="how" id="how">
+        <h2>怎么用，四步。</h2>
+        <ol class="how-list">
+          <li><b>① 写一句交代</b><span>产品 / 人群 / 语气，写清这三点就够了。越具体越贴。</span></li>
+          <li><b>② 选平台和语气</b><span>顶部选小红书 / 公众号 / 抖音 / B站，再挑一个语气方向。</span></li>
+          <li><b>③ 点「生成」</b><span>当前大模型写完，自动跳到结果页：标题、配文、备选标题、正文、互动引导、封面文案、话题一次给全。</span></li>
+          <li><b>④ 复制或发布</b><span>结果页可逐项复制，也能去封面工坊换图、调字体、套版式，再到发布中心。</span></li>
+        </ol>
+        <p class="note">这些都在 Skill 弹窗里完成，用的是你当前的大模型。第一次使用前，按上面「安装 Skill」把它装好。</p>
+      </section>
+
+      <!-- ===== 已知问题 ===== -->
+      <section class="issues" id="issues">
+        <h2>现在的问题，也写清楚。</h2>
+        <p class="lead">这一版自己完整跑过一遍，下面是真实存在的限制，不藏着。</p>
+        <ul class="issue-list">
+          <li><b>需要能执行本地命令的 AI</b><span>普通网页聊天装不了本地服务；请用支持文件读写与命令的 Agent（DeepSeek Harness / Codex / Claude 等）。</span></li>
+          <li><b>弹窗只在本机打开</b><span>127.0.0.1 的链接不能发给别人，这是设计，不是故障。</span></li>
+          <li><b>生成要在 90 秒内写完</b><span>点「生成」后由你当前的大模型写文案；超时就再点一次。</span></li>
+          <li><b>登录仍是本机演示</b><span>账号只存在浏览器，换设备不会同步，也没有找回密码。</span></li>
+        </ul>
+      </section>
+
+      <!-- ===== 模型 ===== -->
+      <section class="models" id="models">
+        <h2>不用再填 Key。</h2>
+        <p class="lead">文案由你当前使用的大模型生成。编译器只负责界面、平台规则、封面和导出，不再单独接一家模型。</p>
+        <div class="model-list">
+          <div class="model"><div><b>你的大模型</b><small>DeepSeek Harness / Codex / Claude 等</small></div><span class="model__tag">写文案</span></div>
+          <div class="model"><div><b>文案编译器</b><small>本地 Skill 弹窗 · 原界面不变</small></div><span class="model__tag">平台规则 · 封面 · 导出</span></div>
+        </div>
+        <p class="note">没有 API Key，没有额度，也没有第三方账号授权。</p>
+      </section>
+
+      <!-- ===== Skill 安装 ===== -->
+      <section class="skill" id="skill">
+        <h2>装进你的大模型，<br />一句话就打开。</h2>
+        <p class="lead">功能没变，只是从「打开一个网页」变成「在对话里弹出一个编译器」。下载一个 Markdown，拖进对话，让 AI 装好；以后说一句话就能唤醒。</p>
+
+        <div class="actions">
+          <a class="btn btn--solid" href="./成品工作台.md" download>下载 Skill（成品工作台.md）</a>
+          <a class="btn btn--ghost" href="#install">看安装与唤醒</a>
+        </div>
+
+        <ol class="how-list">
+          <li><b>① 下载</b><span>得到一个 <code>成品工作台.md</code>，里面就是编译器界面、本地服务和安装说明。</span></li>
+          <li><b>② 拖进对话</b><span>把文件拖进支持本地文件与命令的 AI，说：「安装这个文案编译器 Skill，按文件开头的说明装到本机。」</span></li>
+          <li><b>③ 等它装完</b><span>AI 会还原文件、安装依赖、注册工具和 Skill；装好后它会告诉你「装好了」。</span></li>
+          <li><b>④ 说一句唤醒</b><span>「使用文案编译器，写一篇小红书咖啡文案。」→ 编译器弹窗打开，界面和原来一样。</span></li>
+        </ol>
+
+        <div class="say-list">
+          <p class="say-list__title">装好以后，可以直接说：</p>
+          <blockquote>使用文案编译器，写一篇小红书咖啡文案。</blockquote>
+          <blockquote>打开文案编译台。</blockquote>
+          <blockquote>用文案编译器写一篇公众号长文。</blockquote>
+          <blockquote>用文案编译器，把这段想法编译成四平台文案。</blockquote>
+        </div>
+
+        <p class="note">触发词：文案编译器 / 文案编译台 / 编译文案 / 写小红书文案 / 写公众号长文 / 写抖音口播 / 写 B站脚本。弹窗里照旧写一句交代、选平台和语气、点生成。</p>
+      </section>
+
+      <section class="install" id="install">
+        <h2>安装三步，<br />之后都在弹窗里。</h2>
+        <ol class="install__steps">
+          <li><b>准备</b><span>一个能读写本地文件、执行命令的 AI；Node.js 22.13+。只聊天不执行命令的网页不行。</span></li>
+          <li><b>安装</b><span>下载 <code>成品工作台.md</code> → 拖进对话 → 说：「安装这个文案编译器 Skill，按文件开头的说明装到本机。」</span></li>
+          <li><b>唤醒</b><span>说：「使用文案编译器，写一篇小红书咖啡文案。」→ 弹窗打开后，写一句交代、点生成。</span></li>
+        </ol>
+        <p class="note">第一次安装需要几分钟；之后每次只开一个弹窗，不用再打开网页，也不用回聊天输入“继续”。</p>
+        <div class="actions">
+          <a class="btn btn--solid" href="./成品工作台.md" download>下载 Skill</a>
+          <a class="btn btn--ghost" href="#how">看弹窗里怎么操作</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>文案编译器</span>
+      <span>想法进来，成品出去。</span>
+    </footer>
+
+    <script src="./landing.js"></script>
+  </body>
+</html>
+
+
+
