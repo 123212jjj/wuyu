@@ -800,3 +800,13 @@ code { padding: 1px 6px; font-family: "SFMono-Regular", Consolas, monospace; fon
 .say-list blockquote:first-of-type { border-top: 0; }
 .say-list blockquote::before { content: "“"; color: var(--accent, #a9c6ff); }
 .say-list blockquote::after { content: "”"; color: var(--accent, #a9c6ff); }
+
+/* Brush brand emblem */
+img.nav__seal {
+  display: block;
+  width: auto;
+  height: 42px;
+  background: none;
+  border-radius: 0;
+  object-fit: contain;
+}
